@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nikhil Reddy Kethireddy | IT Operations & Data Analytics Specialist</title>
+<meta name="description" content="Portfolio of Nikhil Reddy Kethireddy — IT Operations and Data Analytics Specialist. ITSM, Azure/Intune, Python, SQL, Power BI." />
+<style>
+  :root{
+    --bg:#0b1120; --surface:#111a2e; --surface-2:#162238;
+    --text:#e6edf7; --muted:#9aa8bd; --border:#22304d;
+    --accent:#38bdf8; --accent-2:#a78bfa; --success:#22c55e;
+    --radius:14px; --max:1100px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header.nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,17,32,.75);border-bottom:1px solid var(--border);z-index:10}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:var(--max);margin:0 auto}
+  .brand{font-weight:700;letter-spacing:.3px}
+  .brand span{color:var(--accent)}
+  nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+  nav a{color:var(--muted);font-size:14px}
+  nav a:hover{color:var(--text);text-decoration:none}
+
+  /* Hero */
+  .hero{padding:88px 0 64px;background:radial-gradient(1200px 500px at 20% -10%, rgba(56,189,248,.15), transparent 60%), radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,.12), transparent 60%)}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);padding:6px 12px;border-radius:999px;background:var(--surface)}
+  h1{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:18px 0 12px}
+  h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:780px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:600;font-size:14px;border:1px solid var(--border);background:var(--surface);color:var(--text)}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border-color:transparent;color:#0b1120}
+  .btn:hover{transform:translateY(-1px);transition:transform .15s ease}
+
+  section{padding:64px 0;border-top:1px solid var(--border)}
+  h2{font-size:28px;margin:0 0 8px}
+  .section-lead{color:var(--muted);margin-bottom:28px;max-width:720px}
+
+  /* About */
+  .about p{color:#cfd8e6;max-width:820px}
+
+  /* Projects */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color .2s ease, transform .2s ease}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .tag.alt{color:var(--accent-2)}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{color:#cfd8e6;font-size:14.5px;margin:0 0 12px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .chip{font-size:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:999px}
+  .display{font-size:13px;color:var(--muted);border-left:2px solid var(--accent);padding:6px 12px;margin:12px 0 0;background:rgba(56,189,248,.05);border-radius:0 8px 8px 0}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .skill{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+  .skill h4{margin:0 0 10px;font-size:15px;color:var(--accent)}
+  .skill ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+  .skill li{font-size:13px;background:var(--surface-2);border:1px solid var(--border);padding:5px 10px;border-radius:8px;color:#dbe4f2}
+
+  /* Contact */
+  .contact{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+  .contact h3{margin:0 0 4px}
+  .contact p{margin:0;color:var(--muted)}
+
+  footer{padding:28px 0 48px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--border)}
+
+  @media (max-width:640px){
+    nav ul{display:none}
+    .hero{padding:64px 0 40px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Nikhil<span>.</span>Reddy</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#ai-itsm">AI in ITSM</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+        <li><a href="#artifact-ml-dl">ML vs DL</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">IT Operations · Data Analytics</span>
+      <h1>Nikhil Reddy Kethireddy<br/><span class="grad">IT Operations & Data Analytics Specialist</span></h1>
+      <p class="sub">Bridging the gap between robust IT infrastructure and data-driven operational efficiency. Experienced in ITSM, Cloud Administration (Azure / Intune), and Business Intelligence with Python, SQL, and Power BI.</p>
+      <div class="cta">
+        <a class="btn primary" href="#" download>⬇ Download Resume (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="section-lead">A modern, data-driven IT professional.</p>
+      <p>I am an MIS Graduate with a passion for optimizing enterprise IT ecosystems. With hands-on experience spanning Desktop Support, Endpoint Management (Intune / Azure), and ITSM frameworks at companies like <strong>Tech Mahindra</strong> and <strong>Accenture</strong>, I focus on maximizing operational uptime. Beyond day-to-day support, I leverage <strong>Python, SQL, and Power BI</strong> to turn infrastructure data into actionable business insights.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <p class="section-lead">Two sides of the same discipline — analytics that inform strategy, and operations that keep the business running.</p>
+
+      <h3 style="margin:24px 0 14px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">📊 Data & Strategy Projects</h3>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Project 01</span>
+          <h3>Data-Driven Strategy for Product Development & Information Security</h3>
+          <p>Designing secure enterprise systems while driving product innovation through data insights.</p>
+          <div class="display">Displays: performance monitoring dashboards, integrated ERP/CRM architecture breakdown, and implemented security protocols.</div>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">ERP / CRM</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="tag">Project 02</span>
+          <h3>Customer Segmentation & Predictive Sales Forecasting</h3>
+          <p>Machine learning models to optimize marketing spend and predict demand across product lines.</p>
+          <div class="display">Displays: interactive Power BI / Tableau dashboard with K-Means clusters and time-series forecast charts.</div>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">K-Means</span><span class="chip">Regression</span><span class="chip">Tableau</span>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="margin:36px 0 14px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">🛠️ Infrastructure & IT Operations Case Studies</h3>
+      <div class="grid">
+        <article class="card">
+          <span class="tag alt">Case Study 03</span>
+          <h3>Modern Endpoint Management & Device Compliance</h3>
+          <p>Cloud-based device deployment and compliance at enterprise scale — administering accounts, troubleshooting ADFS, and participating in Intune deployment teams to keep fleets compliant.</p>
+          <div class="chips">
+            <span class="chip">Microsoft Intune</span><span class="chip">Azure AD</span><span class="chip">ADFS</span><span class="chip">Asset Lifecycle</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="tag alt">Case Study 04</span>
+          <h3>ITSM Optimization & SLA Compliance</h3>
+          <p>Handling high-volume, high-priority incident workflows: break-fix resolution, vendor procurement records (CDW), inventory control, and streamlined user onboarding.</p>
+          <div class="chips">
+            <span class="chip">ServiceNow</span><span class="chip">SLA / OLA</span><span class="chip">Procurement</span><span class="chip">Inventory</span>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="margin:36px 0 14px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">🤖 AI Product Build</h3>
+      <article class="card" style="padding:28px">
+        <span class="tag">Featured Build</span>
+        <h3>The Boyz — AI Speaker Bureau Recommendation Bot</h3>
+        <p>End-to-end AI product: an intelligent chatbot that matches event organizers with the right keynote speakers based on topic, audience, budget, language, and speaking style. Built from a deep-dive discovery interview through professional speaker profiling, model training, and a customer-facing conversational UI.</p>
+        <div class="display"><strong>My role:</strong> Product concept, data structuring of speaker profiles (keynote topics, target audience, pricing, travel), AI bot training & prompt design, testing recommendation quality, and go-to-market marketing collateral.</div>
+        <div class="chips">
+          <span class="chip">AI / Chatbot</span><span class="chip">Prompt Engineering</span><span class="chip">Data Modeling</span><span class="chip">Recommendation Systems</span><span class="chip">Product Design</span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:22px">
+          <figure style="margin:0">
+            <img src="theboyz-process.png" alt="From Interview to AI Speaker Bot — 6-step project journey infographic" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08);display:block" loading="lazy" />
+            <figcaption style="font-size:13px;color:var(--muted);margin-top:8px">Project journey — from discovery interview to a live speaker-recommendation bot.</figcaption>
+          </figure>
+          <figure style="margin:0">
+            <img src="theboyz-marketing.png" alt="The Boyz AI Speaker Bureau — Find, Match, Book in seconds marketing infographic" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08);display:block" loading="lazy" />
+            <figcaption style="font-size:13px;color:var(--muted);margin-top:8px">Go-to-market one-pager — value props, how-it-works, and launch offer.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card" style="padding:28px;margin-top:22px">
+        <span class="tag">Live Chatbot</span>
+        <h3>TedTalker — AI Chatbot (Live Demo)</h3>
+        <p>A browser-based AI chatbot I built and deployed on GitHub Pages. It demonstrates conversational UX, prompt design, and lightweight front-end integration for an AI assistant experience.</p>
+        <div class="display"><strong>Try it live:</strong> <a href="https://homakesava56.github.io/Tedtalker/" target="_blank" rel="noopener" style="color:var(--accent)">https://homakesava56.github.io/Tedtalker/</a></div>
+        <div class="chips">
+          <span class="chip">Chatbot</span><span class="chip">HTML / JS</span><span class="chip">Prompt Engineering</span><span class="chip">GitHub Pages</span>
+        </div>
+        <div style="margin-top:18px">
+          <a class="btn primary" href="https://homakesava56.github.io/Tedtalker/" target="_blank" rel="noopener">🚀 Launch TedTalker</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- AI IN ITSM -->
+  <section id="ai-itsm">
+    <div class="container">
+      <h2>AI in ITSM & Ticket Management</h2>
+      <p class="section-lead">How AI is reshaping IT Service Management — and how we are applying it inside our organization.</p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">How we use it</span>
+          <h3>AI-Assisted Ticket Management</h3>
+          <p>In our ITSM workflow, AI helps at every stage of the ticket lifecycle:</p>
+          <ul style="margin:10px 0 0 18px;color:var(--muted);line-height:1.75">
+            <li><strong>Smart triage:</strong> AI auto-classifies incoming tickets by category, urgency, and impact, and routes them to the right queue.</li>
+            <li><strong>Suggested resolutions:</strong> The tool surfaces similar past tickets and KB articles, reducing average handle time.</li>
+            <li><strong>Auto-drafted responses:</strong> Copilot-style suggestions help engineers reply consistently and faster.</li>
+            <li><strong>Predictive insights:</strong> Trend detection on recurring incidents highlights problem candidates before they escalate.</li>
+            <li><strong>Chatbots for L1:</strong> Password resets, software requests, and status lookups are self-served, freeing engineers for complex work.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag alt">Impact</span>
+          <h3>Why It Matters</h3>
+          <p>AI in ITSM directly improves the metrics that matter to operations:</p>
+          <ul style="margin:10px 0 0 18px;color:var(--muted);line-height:1.75">
+            <li>Faster <strong>MTTR</strong> through intelligent recommendations.</li>
+            <li>Higher <strong>SLA compliance</strong> via automatic prioritization.</li>
+            <li>Better <strong>user experience</strong> with 24/7 self-service.</li>
+            <li>Data-driven <strong>capacity planning</strong> and problem management.</li>
+            <li>Engineers focus on high-value tasks instead of repetitive requests.</li>
+          </ul>
+        </article>
+      </div>
+
+      <article class="card" style="padding:28px;margin-top:22px">
+        <span class="tag">Evolution</span>
+        <h3>The Evolution of AI in IT Operations</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:14px">
+          <div><h4 style="color:var(--accent)">1. Rule-Based Automation</h4><p style="color:var(--muted)">Static scripts, macros, and if-then rules automating password resets and basic monitoring alerts.</p></div>
+          <div><h4 style="color:var(--accent)">2. Machine Learning</h4><p style="color:var(--muted)">Pattern recognition for ticket classification, anomaly detection in logs, and predictive incident analytics.</p></div>
+          <div><h4 style="color:var(--accent)">3. Conversational AI</h4><p style="color:var(--muted)">NLP-powered chatbots and virtual agents handling L1 support in Teams, Slack, and service portals.</p></div>
+          <div><h4 style="color:var(--accent)">4. Generative & Agentic AI</h4><p style="color:var(--muted)">LLM-powered copilots that draft responses, summarize incidents, and autonomously execute runbooks with human oversight.</p></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- REFLECTION (ARTIFACT 1) -->
+  <section id="reflection">
+    <div class="container">
+      <h2>Assessment 1.5 — Reflection on AI/ML Leadership & Change Management</h2>
+      <p class="section-lead">A personal reflection on two self-assessments completed as part of my leadership development.</p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Strengths</span>
+          <h3>Top 3 Strengths</h3>
+          <p>For the <strong>AI/ML Leadership</strong> assessment, my strongest areas were <strong>technology adaptability, problem-solving, and continuous learning</strong>. Working as a Desktop Support Engineer at Tech Mahindra and previously in service desk roles has required me to quickly learn new technologies, troubleshoot complex issues, and stay current with evolving tools such as Azure, Intune, and AI-assisted solutions.</p>
+          <p>For the <strong>Change Management</strong> assessment, my top strengths were <strong>communication, collaboration, and adaptability</strong>. Throughout my career, I have worked with cross-functional teams, supported end users through technology transitions, and helped implement new processes while maintaining service quality.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag alt">Growth</span>
+          <h3>Top 3 Areas for Growth</h3>
+          <p>On the AI/ML side, I identified <strong>strategic AI planning, AI governance and ethics, and leading large-scale AI initiatives</strong> as areas for improvement. While I actively use AI tools and recently worked on the TED Talk Speaker Recommendation Bot project, I would like more experience connecting AI strategies to broader organizational goals.</p>
+          <p>For Change Management, my areas for growth were <strong>managing resistance to change, measuring long-term change success, and influencing stakeholders</strong>. Supporting IT changes is a regular part of my role, but leading enterprise-wide change initiatives would help strengthen these skills.</p>
+        </article>
+      </div>
+
+      <article class="card" style="padding:28px;margin-top:22px">
+        <span class="tag">Opinion</span>
+        <h3>My Opinion of the Assessments</h3>
+        <p>I found both assessments useful because they encouraged self-reflection and helped identify practical strengths and development opportunities. Rather than serving as precise measurements, they act as a starting point for leadership growth. One limitation is that self-assessments depend heavily on personal perception, which can sometimes lead to overestimating or underestimating abilities. I believe combining self-assessments with peer or supervisor feedback would provide a more complete evaluation.</p>
+      </article>
+
+      <article class="card" style="padding:28px;margin-top:22px">
+        <span class="tag alt">Revisions</span>
+        <h3>Revisions I Would Make</h3>
+        <p>For the <strong>AI/ML assessment</strong>, I would add questions related to ethical AI use, data privacy, cybersecurity considerations, and responsible AI governance. These topics are becoming increasingly important as organizations adopt AI technologies.</p>
+        <p>For the <strong>Change Management assessment</strong>, I would include questions that focus on leading remote or hybrid teams, measuring adoption rates, and using data to evaluate the success of change initiatives. Based on the articles and my own experience, I would also add more questions that assess a leader's ability to communicate the <em>"why"</em> behind change, not just the implementation process itself.</p>
+      </article>
+
+      <article class="card" style="padding:28px;margin-top:22px">
+        <h3>Closing Thoughts</h3>
+        <p>Overall, the assessments reinforced the idea that successful change leadership requires a balance of <strong>technical knowledge, communication skills, adaptability, and a commitment to continuous learning</strong>. As AI continues to evolve and become more integrated into business operations, leaders must be able to guide both technology adoption and the people impacted by that change.</p>
+        <p style="color:var(--muted);font-size:13px;margin-top:14px;border-top:1px solid var(--border);padding-top:14px"><strong>AI Use Disclosure:</strong> I used Microsoft Copilot to help rephrase and improve the clarity and organization of my reflection. The ideas, experiences, and opinions expressed in this post are my own.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ARTIFACT 2 — ML vs DL Case Study -->
+  <section id="artifact-ml-dl">
+    <div class="container">
+      <span class="eyebrow">Portfolio Artifact 02 · Assessment 2.3 · ML vs. Deep Learning</span>
+      <h2 style="margin-top:16px">Matching the Tool to the Problem: Machine Learning vs. Deep Learning</h2>
+      <p class="section-lead">A case study comparing two real-world AI applications to show when traditional machine learning is the right choice, when deep learning earns its cost — and why picking the most advanced tool is not always the right business decision.</p>
+
+      <!-- Template elements: Objective / Process / Tools / Value Proposition -->
+      <div class="grid" style="margin-bottom:22px">
+        <article class="card">
+          <span class="tag">Objective</span>
+          <p>Evaluate two real-world AI applications to determine when traditional ML versus deep learning is the appropriate approach, and communicate that decision framework to a business audience.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Process</span>
+          <p>Selected two contrasting applications — customer churn prediction and CNN-based facial recognition — and analyzed each against three criteria: feature extraction, data requirements, and model complexity.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Tools &amp; Concepts</span>
+          <p>Support vector machines, logistic regression, convolutional neural networks; evaluation framing drawn from my analytics work in Python, SQL, and Power BI.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Value Proposition</span>
+          <p>Demonstrates the ability to match an AI approach to business constraints — interpretability, data availability, and cost — a judgment skill central to AI adoption decisions in IT operations.</p>
+        </article>
+      </div>
+
+      <!-- Head-to-head summary -->
+      <div class="grid" style="margin-bottom:22px">
+        <article class="card">
+          <span class="tag">Traditional ML — Customer Churn</span>
+          <p>Structured tabular data, known features, modest datasets, and a business need for interpretable predictions.</p>
+        </article>
+        <article class="card">
+          <span class="tag alt">Deep Learning — Image Recognition</span>
+          <p>Raw, high-dimensional pixel data where features can't be hand-defined and massive datasets justify network complexity.</p>
+        </article>
+      </div>
+
+      <!-- Evidence: the full case study -->
+      <article class="card" style="padding:28px">
+        <p>Machine learning and deep learning both enable computers to learn from data, but they differ fundamentally in how they handle features, how much data they require, and how complex their models are. A simple way to frame the difference: machine learning is like giving a student a checklist of things to look for, while deep learning is like teaching the student to read and letting them figure out the patterns through experience. This case study compares one real-world application of each approach and explains why the chosen technique fits the problem while the alternative does not.</p>
+
+        <h3 style="color:var(--accent);margin-top:22px">Machine Learning: Customer Churn Prediction</h3>
+        <p>Telecommunications and subscription-based companies use models such as support vector machines and logistic regression to predict which customers are likely to cancel. A provider can analyze historical records — contract length, monthly charges, tenure, support tickets filed — to flag at-risk customers before they leave, allowing retention teams to intervene with targeted offers.</p>
+        <p>Traditional ML fits this problem for three reasons. First, the data is structured and tabular, and the meaningful features are already known to domain experts, so manual feature selection is straightforward and effective. Second, churn datasets are often modest in size — enough for an SVM or logistic regression to perform well. Third, the business needs interpretability: a retention team must understand why a customer was flagged, and simpler models provide that transparency directly.</p>
+        <p>Deep learning is not suitable here. Its core advantage — automatically discovering features from raw, high-dimensional data — is wasted on a few dozen clean database columns. A deep neural network would risk overfitting the limited data, demand far more computational power, and produce a black-box model that is harder to explain to stakeholders, typically with no accuracy improvement over traditional methods on tabular data.</p>
+
+        <h3 style="color:var(--accent);margin-top:22px">Deep Learning: Image Recognition with CNNs</h3>
+        <p>Facial recognition systems such as Apple's Face ID use convolutional neural networks to identify users from raw camera data. The CNN processes millions of pixel values and learns, through its many layers, to detect progressively more abstract patterns — from simple edges to textures to complete facial structures — without any human defining what an eye or nose looks like.</p>
+        <p>Deep learning fits this problem precisely because the input is raw and unstructured. No human can manually write features that reliably describe a face across every lighting condition, angle, and individual. The automatic, layered feature learning of a deep network is exactly what the task demands, and today's enormous image datasets provide the training volume that deep learning requires.</p>
+        <p>Traditional ML is not suitable for this task. An SVM or decision tree fed raw pixels has no mechanism for discovering spatial patterns on its own, so it would depend entirely on hand-engineered image features — an approach that historically capped accuracy well below human performance. The complexity of a deep network is justified here because the problem itself is complex.</p>
+
+        <h3 style="color:var(--accent);margin-top:22px">Conclusion</h3>
+        <p>When features are known, data is limited, and interpretability matters, traditional machine learning is the better tool. When the data is raw and high-dimensional, features cannot be defined by hand, and large datasets are available, deep learning's added complexity earns its cost. Choosing between them is less about which is more advanced and more about matching the tool to the shape of the problem.</p>
+
+        <div class="chips">
+          <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">SVM / Logistic Regression</span><span class="chip">CNNs</span><span class="chip">Model Selection</span><span class="chip">Technical Communication</span>
+        </div>
+
+        <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>AI Use Disclosure:</strong> I used AI assistance to help organize and refine the wording of this case study. The analysis, example selection, and conclusions reflect my own coursework and understanding.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <p class="section-lead">A quick checklist for hiring managers.</p>
+      <div class="skills">
+        <div class="skill">
+          <h4>Cloud & Systems Admin</h4>
+          <ul><li>Azure Active Directory</li><li>Microsoft Intune</li><li>Active Directory</li><li>ADFS</li></ul>
+        </div>
+        <div class="skill">
+          <h4>ITSM & Operations</h4>
+          <ul><li>Service Desk Operations</li><li>SLA / OLA Compliance</li><li>Asset Lifecycle Mgmt</li><li>Inventory Control</li></ul>
+        </div>
+        <div class="skill">
+          <h4>Data & Analytics</h4>
+          <ul><li>Python</li><li>SQL</li><li>Power BI</li><li>Tableau</li><li>Predictive Modeling</li></ul>
+        </div>
+        <div class="skill">
+          <h4>Core Software</h4>
+          <ul><li>Advanced Excel</li><li>MS Word</li><li>SAP Escalations</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div>
+          <h3>Let's build something reliable — and measurable.</h3>
+          <p>Open to IT Operations, Systems Admin, and Data Analytics roles.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="mailto:your.email@example.com">✉ Email Me</a>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="y"></span> Nikhil Reddy Kethireddy · Built as a single-file HTML portfolio.
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
