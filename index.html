@@ -55,6 +55,14 @@
   .chip{font-size:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:999px}
   .display{font-size:13px;color:var(--muted);border-left:2px solid var(--accent);padding:6px 12px;margin:12px 0 0;background:rgba(56,189,248,.05);border-radius:0 8px 8px 0}
 
+  /* Evidence download tiles (Artifact 03) */
+  .filegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:6px}
+  .file{display:block;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text);transition:border-color .2s ease, transform .2s ease}
+  .file:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
+  .file strong{display:block;font-size:16px;margin-bottom:6px}
+  .file em{display:block;font-size:14px;color:var(--muted);font-style:normal;margin-bottom:12px}
+  .file .go{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
   /* Skills */
   .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
   .skill{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
@@ -87,6 +95,7 @@
         <li><a href="#ai-itsm">AI in ITSM</a></li>
         <li><a href="#reflection">Reflection</a></li>
         <li><a href="#artifact-ml-dl">ML vs DL</a></li>
+        <li><a href="#artifact-ai-tutor">AI Tutor</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -357,6 +366,69 @@
         </div>
 
         <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>AI Use Disclosure:</strong> I used AI assistance to help organize and refine the wording of this case study. The analysis, example selection, and conclusions reflect my own coursework and understanding.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ARTIFACT 3 — Learning ML from an AI Tutor -->
+  <section id="artifact-ai-tutor">
+    <div class="container">
+      <span class="eyebrow">Portfolio Artifact 03 · Assignment 3.3 · ML Training Methods</span>
+      <h2 style="margin-top:16px">Learning Machine Learning from an AI Tutor — and Testing Whether to Believe It</h2>
+      <p class="section-lead">A guided tutoring session on how machine learning models learn, turned into a reusable reference guide. The interesting part wasn't the curriculum — it was what happened when I started pushing back on the tutor.</p>
+
+      <!-- Evidence -->
+      <h3 style="margin:0 0 12px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">Evidence</h3>
+      <div class="filegrid" style="margin-bottom:26px">
+        <a class="file" href="ML_Training_Methods_Quick_Reference.pdf">
+          <strong>Quick Reference Guide (PDF)</strong>
+          <em>Two pages built from the session, written for professionals who evaluate machine learning proposals rather than build models.</em>
+          <span class="go">Download →</span>
+        </a>
+        <a class="file" href="Artifact3_Transcript.pdf">
+          <strong>Full Session Transcript (PDF)</strong>
+          <em>The complete tutoring conversation, including where I challenged the tutor's reliability.</em>
+          <span class="go">Download →</span>
+        </a>
+      </div>
+
+      <!-- Template elements -->
+      <div class="grid" style="margin-bottom:22px">
+        <article class="card">
+          <span class="tag">Objective</span>
+          <p>Build a working foundation in machine learning training methods, and practise using an AI tutor as a learning tool without treating its output as authoritative. A second objective emerged during the session: converting a private learning conversation into something another person could actually use.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Tools &amp; Technologies</span>
+          <p>SchoolAI (AI tutoring platform), <em>A Beginner's Guide to Artificial Intelligence and Machine Learning</em> as supporting reading, and PDF authoring for the reference guide.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Value Proposition</span>
+          <p>Demonstrates two capabilities employers need: understanding how models learn well enough to judge whether a proposed solution fits a problem, and treating AI-generated explanations as claims to verify rather than answers to accept.</p>
+        </article>
+        <article class="card">
+          <span class="tag alt">Unique Value</span>
+          <p>Most people use an AI tutor to get answers. I used one and then interrogated its reliability. My IT service management background also let me stress-test the concepts against a real system — the label-quality problem in ticket routing is invisible in a textbook example and obvious to anyone who has worked a service desk.</p>
+        </article>
+      </div>
+
+      <article class="card" style="padding:28px">
+        <span class="tag">Description</span>
+        <p>For this coursework activity I worked through a structured session with an AI coaching bot covering the three training paradigms — supervised, unsupervised, and reinforcement learning — along with the role of algorithms, the training workflow, why models need repeated passes over data, and why data quality determines the ceiling on performance. Rather than stopping at the seven assigned questions, I brought my own examples from IT service management, corrected one of the tutor's analogies, answered a question it had left open earlier in the session, and challenged it directly on why I should trust explanations it had supplied without independent verification. I then condensed the session into a two-page quick-reference guide aimed at technical professionals who need to evaluate machine learning proposals rather than build models.</p>
+
+        <h3 style="color:var(--accent);margin-top:22px">Process</h3>
+        <p>I worked through the seven core questions in sequence, from supervised learning through to the role of data. At each stage I tested the concept against a scenario from my own work. On supervised learning I raised help desk ticket routing — thousands of historical tickets already tagged by category — and identified that the model can only inherit the accuracy of whoever tagged them; a category that was habitually misfiled will be reproduced faithfully.</p>
+        <p>When the tutor compared algorithms to a recipe, I refined the analogy: data and features are the ingredients, and compute is the oven. I returned to an unanswered question from earlier in the session to state that a reinforcement agent maximises cumulative rather than immediate reward, then pressed on the mechanism — how an agent can recognise that an apparently bad move was worth making — until credit assignment made sense.</p>
+        <p>Asked where a limited budget should go, I argued for better features over more data, since additional data at small scale tends to add noise and feature work requires no labelling team. Finally I asked the tutor how I could trust information it had entirely supplied, and recorded its answer: cross-reference, test it, ask why. I used that exchange as the closing section of the guide.</p>
+
+        <h3 style="color:var(--accent);margin-top:22px">Relevance</h3>
+        <p>The course objectives centre on applying foundational AI and machine learning concepts and evaluating AI tools critically. This artifact does both in one activity: it covers the core training methods, and it documents a deliberate check on the credibility of the tool teaching them.</p>
+
+        <div class="chips">
+          <span class="chip">Supervised / Unsupervised / Reinforcement</span><span class="chip">Training Workflow</span><span class="chip">Data Quality</span><span class="chip">Feature Engineering</span><span class="chip">AI Tool Evaluation</span><span class="chip">Technical Documentation</span>
+        </div>
+
+        <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>References:</strong> <em>A Beginner's Guide to Artificial Intelligence and Machine Learning.</em> AIML-500 Machine Learning Training Methods Coach [AI tutoring session], SchoolAI, July 2026.<br /><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page and the reference guide. The session, the examples drawn from my own work, and the conclusions are my own.</p>
       </article>
     </div>
   </section>
