@@ -63,6 +63,14 @@
   .file em{display:block;font-size:14px;color:var(--muted);font-style:normal;margin-bottom:12px}
   .file .go{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 
+  /* Scenario blocks (Artifact 04) */
+  .scenario{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;padding:22px;margin-top:20px}
+  .scenario h4{margin:0 0 4px;font-size:17px;color:var(--text)}
+  .scenario .situation{font-size:13.5px;color:var(--muted);margin:0 0 14px;padding-bottom:12px;border-bottom:1px dashed var(--border)}
+  .scenario p{color:#cfd8e6;font-size:14.5px}
+  .scenario .label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:16px 0 6px}
+  .scenario ul{margin:6px 0 0 18px;color:#cfd8e6;font-size:14.5px;line-height:1.7}
+
   /* Skills */
   .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
   .skill{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
@@ -96,6 +104,7 @@
         <li><a href="#reflection">Reflection</a></li>
         <li><a href="#artifact-ml-dl">ML vs DL</a></li>
         <li><a href="#artifact-ai-tutor">AI Tutor</a></li>
+        <li><a href="#artifact-data-challenges">Data Challenges</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -429,6 +438,119 @@
         </div>
 
         <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>References:</strong> <em>A Beginner's Guide to Artificial Intelligence and Machine Learning.</em> AIML-500 Machine Learning Training Methods Coach [AI tutoring session], SchoolAI, July 2026.<br /><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page and the reference guide. The session, the examples drawn from my own work, and the conclusions are my own.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ARTIFACT 4 — Diagnosing Data Failures in Production ML -->
+  <section id="artifact-data-challenges">
+    <div class="container">
+      <span class="eyebrow">Portfolio Artifact 04 · Assignment 4.3 · Data Challenge Scenarios</span>
+      <h2 style="margin-top:16px">Diagnosing Data Failures in Production Machine Learning</h2>
+      <p class="section-lead">Three escalating scenarios — missing data, extreme class imbalance, and a production feedback loop. In every one, the reported metric looked acceptable while the model was failing. This artifact documents how I found the real problem underneath each.</p>
+
+      <!-- Evidence -->
+      <h3 style="margin:0 0 12px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">Evidence</h3>
+      <div class="filegrid" style="margin-bottom:26px">
+        <a class="file" href="Artifact4_Transcript.pdf">
+          <strong>Full Session Transcript (PDF)</strong>
+          <em>The complete coaching session across all three scenarios, including the points where I challenged the coach's framing.</em>
+          <span class="go">Download →</span>
+        </a>
+        <a class="file" href="Artifact4_Decision_Brief.pdf">
+          <strong>Decision Brief (PDF)</strong>
+          <em>The session restructured as a practitioner reference — situation, diagnosis, approach, and open questions for each scenario.</em>
+          <span class="go">Download →</span>
+        </a>
+      </div>
+
+      <!-- Template elements -->
+      <div class="grid" style="margin-bottom:22px">
+        <article class="card">
+          <span class="tag">Objective</span>
+          <p>Apply principled approaches to data cleaning and imputation, diagnose why an evaluation metric can misrepresent real-world performance, and explain how production feedback loops contaminate the very data used to correct them.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Process</span>
+          <p>For each scenario I separated the reported symptom from the underlying data defect, proposed an approach covering detection, correction, and prevention, then pressure-tested my own reasoning by questioning the coach rather than accepting its first answer.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Tools &amp; Technologies</span>
+          <p>SchoolAI (AIML-500 Data Challenge Scenarios Coach). Concepts applied: MCAR / MAR / MNAR missingness frameworks, group-wise imputation, train–test leakage control, class weighting, threshold tuning, probability calibration, anomaly detection, and bandit-based exploration.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Value Proposition</span>
+          <p>I can identify the moment a model's reported metric stops describing its actual behaviour, and explain what to measure instead. In all three scenarios the technical remedy was straightforward once the problem was framed correctly — the difficult work was recognising that the headline number was hiding the failure.</p>
+        </article>
+        <article class="card">
+          <span class="tag alt">Unique Value</span>
+          <p>I did not treat the coach as an authority to agree with. I challenged its percentage-based rule for unusable columns and replaced it with a mechanism-based one, questioned whether classification was the right framing before optimising within it, and raised the probability-calibration problem myself rather than waiting to be told.</p>
+        </article>
+        <article class="card">
+          <span class="tag alt">Relevance</span>
+          <p>Organisations increasingly deploy models into environments that shift underneath them and act on their own outputs. Imputation strategy, leakage prevention, metric selection under imbalance, and feedback-loop awareness are what separate a model that trains successfully from one that survives production.</p>
+        </article>
+      </div>
+
+      <article class="card" style="padding:28px">
+        <span class="tag">Description</span>
+        <p>For this coursework activity I completed an interactive session with an AI coaching bot that presented three real-world data challenges of increasing difficulty. Each required a full approach — decisions, reasoning, and solution — before the coach responded with critique and follow-up pressure. For this portfolio I have restructured the conversation into a technical decision brief, presenting each scenario the way a practitioner would document it, and resolving one edge case I left unanswered during the live session.</p>
+
+        <!-- Scenario 1 -->
+        <div class="scenario">
+          <h4>Scenario 1 — Missing Data in a House Price Model</h4>
+          <p class="situation">10,000 property records. Roughly 15% of rows have missing values across <em>year built</em>, <em>square footage</em>, and the target variable <em>sale price</em>.</p>
+
+          <span class="label">My approach</span>
+          <ul>
+            <li><strong>Target variable:</strong> Rows missing <em>sale price</em> cannot train the model, so those rows are dropped — the rows, not the column. But first, check <em>why</em> they are missing. If unsold or withdrawn listings are systematically the ones without a price, dropping them silently narrows what the model is actually trained on.</li>
+            <li><strong>Square footage:</strong> Likely the strongest predictor, so the column stays. Instead of a global median, impute from comparable properties — same neighbourhood, same bedroom count — which preserves the relationships between features rather than flattening every missing house to "average." Add a binary flag marking imputed values, in case the missingness itself carries signal.</li>
+            <li><strong>Year built:</strong> Lower predictive weight, and probably missing where county records are incomplete. Median imputation with a flag is defensible — unless the missing records skew toward older properties, in which case imputation papers over a real pattern.</li>
+            <li><strong>Leakage control:</strong> Compute all imputation statistics from the training split only. Deriving fill values from the full dataset leaks test information into training and inflates evaluation scores.</li>
+          </ul>
+
+          <span class="label">Where I pushed back</span>
+          <p>The coach initially framed column usability as a percentage threshold — under 5% safe, over 30% drop. I challenged that: 40% missing completely at random is easier to handle than 10% missing for a systematic reason. The coach agreed and introduced the proper framework — MCAR, MAR, and MNAR. The percentage tells you how much information you lost; the mechanism tells you whether you introduced bias. Only the second one can poison a model.</p>
+
+          <span class="label">Edge case I resolved afterward</span>
+          <p>The coach asked what happens when a neighbourhood has too few complete records to support a reliable group median — a question I did not answer during the session. The answer is hierarchical fallback: impute from the narrowest group that meets a minimum sample size, widen the grouping (neighbourhood → district → city) when it does not, and record which level was used so the added uncertainty stays visible downstream.</p>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="scenario">
+          <h4>Scenario 2 — Extreme Class Imbalance in Fraud Detection</h4>
+          <p class="situation">1 million transactions, 0.5% fraudulent. The model reports 99.5% accuracy but catches only 12% of actual fraud.</p>
+
+          <span class="label">Diagnosis</span>
+          <p>The model has learned that predicting "not fraud" is correct 99.5% of the time. Accuracy is not measuring fraud detection here — it is measuring class prevalence.</p>
+
+          <span class="label">My approach</span>
+          <p>My first question was whether classification is the right framing at all. At 0.5% positives, anomaly detection — modelling normal behaviour and flagging deviation — may fit better, particularly because fraud is adversarial and its patterns shift over time. Within a classification framework, the two levers are class weighting, which changes the decision boundary the model learns, and threshold tuning, which changes only how the outputs are interpreted afterward. These operate at different stages; they are not the same adjustment made twice.</p>
+
+          <span class="label">The failure I surfaced</span>
+          <p>Heavy class weighting distorts probability calibration. A weighted model's output of 0.7 no longer means a 70% likelihood of fraud. If downstream systems simply threshold that score, the relative ordering still holds and nothing breaks. But if they consume it as a calibrated risk figure — for tiered verification, cost-benefit logic, or ranking across models — every decision built on it is systematically wrong. The remedy is to calibrate after training and before those numbers are exposed, using Platt scaling or isotonic regression. This failure is invisible in accuracy <em>and</em> in recall.</p>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="scenario">
+          <h4>Scenario 3 — Drift and Feedback Loops in Dynamic Pricing</h4>
+          <p class="situation">A ride-share surge pricing model, stable for three months, shows a 40% error increase concentrated in weekend evenings in specific neighbourhoods. It underprices surge there; drivers avoid the zones; riders wait. A competitor launched in those neighbourhoods two weeks earlier and shifted rider price sensitivity.</p>
+
+          <span class="label">Diagnosis</span>
+          <p>This is not only competitor-driven drift. It is a feedback loop. Recent demand data from those zones was generated under the model's own mispricing, so retraining on it means learning from the consequences of the original error. The observed demand is not the demand that would exist at correct pricing.</p>
+
+          <span class="label">My approach</span>
+          <p>Observation cannot resolve this, because every available data point is contaminated by the pricing decisions that caused the problem. The fix is intervention — randomised pricing experiments, or a permanent exploration component in the pricing policy, so the model receives causal signal about the price–demand relationship instead of an echo of its own behaviour. Unaffected neighbourhoods serve as controls, separating competitor impact from self-inflicted damage. In production this is typically implemented through bandit approaches that balance exploration against exploitation, accepting deliberate short-term pricing losses as the cost of not drifting into a worse failure.</p>
+        </div>
+
+        <h3 style="color:var(--accent);margin-top:26px">What I Took From It</h3>
+        <p>The technical fix was the easy part in all three cases. The harder question was whether I was measuring the right thing to begin with. Accuracy on the fraud model, aggregate error on the pricing model, and a clean-looking dataset in the housing scenario were each concealing the actual failure. That habit — interrogating the metric before trusting it — is what this artifact is meant to demonstrate.</p>
+
+        <div class="chips">
+          <span class="chip">Missing Data / MCAR-MAR-MNAR</span><span class="chip">Imputation Strategy</span><span class="chip">Data Leakage</span><span class="chip">Class Imbalance</span><span class="chip">Probability Calibration</span><span class="chip">Model Drift</span><span class="chip">Feedback Loops</span><span class="chip">Causal vs. Observational Data</span>
+        </div>
+
+        <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>References:</strong> AIML-500 Data Challenge Scenarios Coach [AI coaching session], SchoolAI, August 2026.<br /><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page. The session responses, the reasoning, and the conclusions are my own.</p>
       </article>
     </div>
   </section>
