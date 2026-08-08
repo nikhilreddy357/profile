@@ -5,106 +5,198 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nikhil Reddy Kethireddy | IT Operations & Data Analytics Specialist</title>
 <meta name="description" content="Portfolio of Nikhil Reddy Kethireddy — IT Operations and Data Analytics Specialist. ITSM, Azure/Intune, Python, SQL, Power BI." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b1120; --surface:#111a2e; --surface-2:#162238;
-    --text:#e6edf7; --muted:#9aa8bd; --border:#22304d;
-    --accent:#38bdf8; --accent-2:#a78bfa; --success:#22c55e;
-    --radius:14px; --max:1100px;
+    --bg:#0a0a0c;            /* graphite black */
+    --surface:#121215;       /* gunmetal */
+    --surface-2:#18181c;
+    --text:#f2f2f0;          /* off-white */
+    --muted:#9a9aa2;         /* GT silver */
+    --line:#26262c;          /* hairline */
+    --red:#d5001c;           /* racing red — used sparingly */
+    --max:1160px;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .container{max-width:var(--max);margin:0 auto;padding:0 24px}
-  header.nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,17,32,.75);border-bottom:1px solid var(--border);z-index:10}
-  .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:var(--max);margin:0 auto}
-  .brand{font-weight:700;letter-spacing:.3px}
-  .brand span{color:var(--accent)}
-  nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
-  nav a{color:var(--muted);font-size:14px}
-  nav a:hover{color:var(--text);text-decoration:none}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--red);color:#fff}
+  a{color:var(--text);text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--max);margin:0 auto;padding:0 28px}
 
-  /* Hero */
-  .hero{padding:88px 0 64px;background:radial-gradient(1200px 500px at 20% -10%, rgba(56,189,248,.15), transparent 60%), radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,.12), transparent 60%)}
-  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);padding:6px 12px;border-radius:999px;background:var(--surface)}
-  h1{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:18px 0 12px}
-  h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:780px}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:600;font-size:14px;border:1px solid var(--border);background:var(--surface);color:var(--text)}
-  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border-color:transparent;color:#0b1120}
-  .btn:hover{transform:translateY(-1px);transition:transform .15s ease}
+  h1,h2,h3,h4,.display-font{font-family:"Archivo","Inter",sans-serif}
 
-  section{padding:64px 0;border-top:1px solid var(--border)}
-  h2{font-size:28px;margin:0 0 8px}
-  .section-lead{color:var(--muted);margin-bottom:28px;max-width:720px}
+  /* ---------- Nav ---------- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(10,10,12,.82);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;
+    padding:16px 28px;max-width:var(--max);margin:0 auto}
+  .brand{font-family:"Archivo";font-weight:700;letter-spacing:.02em;font-size:15px}
+  .brand i{font-style:normal;color:var(--red)}
+  nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0}
+  nav a{color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;position:relative;padding-bottom:4px;transition:color .25s}
+  nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+    background:var(--red);transition:width .3s ease}
+  nav a:hover{color:var(--text)}
+  nav a:hover::after{width:100%}
 
-  /* About */
-  .about p{color:#cfd8e6;max-width:820px}
+  /* ---------- Type + section furniture ---------- */
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:600;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--red);flex:none}
+  section{padding:110px 0 90px;border-top:1px solid var(--line)}
+  h2{font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.015em;
+    line-height:1.08;margin:18px 0 14px}
+  .section-lead{color:var(--muted);max-width:720px;margin:0 0 44px;font-size:16.5px}
 
-  /* Projects */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color .2s ease, transform .2s ease}
-  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
-  .tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .tag.alt{color:var(--accent-2)}
-  .card h3{margin:0 0 8px;font-size:18px}
-  .card p{color:#cfd8e6;font-size:14.5px;margin:0 0 12px}
-  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-  .chip{font-size:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:999px}
-  .display{font-size:13px;color:var(--muted);border-left:2px solid var(--accent);padding:6px 12px;margin:12px 0 0;background:rgba(56,189,248,.05);border-radius:0 8px 8px 0}
+  /* ---------- Hero ---------- */
+  .hero{min-height:92vh;display:flex;align-items:center;padding:140px 0 80px;border:none;
+    background:
+      radial-gradient(900px 480px at 80% -10%, rgba(213,0,28,.07), transparent 60%),
+      linear-gradient(180deg,#0d0d10 0%, var(--bg) 70%)}
+  .hero h1{font-size:clamp(44px,7.4vw,88px);font-weight:800;letter-spacing:-.03em;
+    line-height:.98;margin:26px 0 10px;text-transform:uppercase}
+  .hero h1 .thin{display:block;font-size:clamp(17px,2vw,24px);font-weight:500;
+    letter-spacing:.08em;color:var(--muted);text-transform:none;margin-top:18px}
+  .hero .sub{color:var(--muted);max-width:640px;font-size:17px;margin-top:8px}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;
+    font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    border:1px solid var(--line);background:transparent;color:var(--text);
+    transition:border-color .25s, background .25s, transform .2s}
+  .btn:hover{border-color:var(--text);transform:translateY(-2px)}
+  .btn .arrow{color:var(--red);transition:transform .25s}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+  .btn.primary .arrow{color:#fff}
+  .btn.primary:hover{background:#b40017;border-color:#b40017}
 
-  /* Evidence download tiles (Artifact 03) */
-  .filegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:6px}
-  .file{display:block;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text);transition:border-color .2s ease, transform .2s ease}
-  .file:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-  .file strong{display:block;font-size:16px;margin-bottom:6px}
-  .file em{display:block;font-size:14px;color:var(--muted);font-style:normal;margin-bottom:12px}
-  .file .go{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  /* ---------- Spec sheet (signature element) ---------- */
+  .spec{border-top:1px solid var(--line);margin:36px 0 0}
+  .spec-row{display:grid;grid-template-columns:220px 1fr;gap:28px;
+    padding:22px 0;border-bottom:1px solid var(--line);transition:background .25s;position:relative}
+  .spec-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+    background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+  .spec-row:hover::before{transform:scaleY(1)}
+  .spec-row:hover{background:rgba(255,255,255,.015)}
+  .spec-label{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--muted);padding-top:4px;padding-left:18px}
+  .spec-value{color:#d6d6da;font-size:15px}
+  .spec-value strong{color:var(--text)}
+  .spec-value ul{margin:4px 0 0 18px;padding:0}
+  .spec-value li{margin-bottom:10px}
+  @media (max-width:720px){.spec-row{grid-template-columns:1fr;gap:8px}}
 
-  /* Scenario blocks (Artifact 04) */
-  .scenario{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;padding:22px;margin-top:20px}
-  .scenario h4{margin:0 0 4px;font-size:17px;color:var(--text)}
-  .scenario .situation{font-size:13.5px;color:var(--muted);margin:0 0 14px;padding-bottom:12px;border-bottom:1px dashed var(--border)}
-  .scenario p{color:#cfd8e6;font-size:14.5px}
-  .scenario .label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:16px 0 6px}
-  .scenario ul{margin:6px 0 0 18px;color:#cfd8e6;font-size:14.5px;line-height:1.7}
+  /* ---------- Cards / grids ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line)}
+  .cell{background:var(--bg);padding:30px;transition:background .3s}
+  .cell:hover{background:var(--surface)}
+  .cell h3{margin:0 0 10px;font-size:18px;font-weight:700;letter-spacing:-.01em}
+  .cell p{color:var(--muted);font-size:14.5px;margin:0 0 12px}
+  .tag{display:block;font-size:10.5px;font-weight:700;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .chip{font-size:11.5px;letter-spacing:.04em;background:var(--surface-2);
+    border:1px solid var(--line);color:var(--muted);padding:5px 12px}
+  .note{font-size:13px;color:var(--muted);border-left:2px solid var(--red);
+    padding:8px 14px;margin:14px 0 0;background:rgba(213,0,28,.04)}
 
-  /* Skills */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .skill{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
-  .skill h4{margin:0 0 10px;font-size:15px;color:var(--accent)}
+  /* ---------- Timeline (Artifact 1) ---------- */
+  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;
+    border-top:1px solid var(--line);margin-top:8px}
+  .stage{padding:30px 26px 30px 0;border-bottom:1px solid var(--line);position:relative}
+  .stage + .stage{padding-left:26px;border-left:1px solid var(--line)}
+  .stage .num{font-family:"Archivo";font-size:42px;font-weight:800;letter-spacing:-.03em;
+    color:transparent;-webkit-text-stroke:1px var(--muted);line-height:1}
+  .stage h4{margin:14px 0 8px;font-size:16px}
+  .stage p{color:var(--muted);font-size:14px;margin:0}
+  .stage:hover .num{-webkit-text-stroke:1px var(--red)}
+  @media (max-width:720px){.stage + .stage{padding-left:0;border-left:none}}
+
+  /* ---------- Evidence download tiles ---------- */
+  .filegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);margin-top:6px}
+  .file{display:block;background:var(--bg);padding:26px;color:var(--text);transition:background .3s}
+  .file:hover{background:var(--surface)}
+  .file strong{display:block;font-family:"Archivo";font-size:16px;margin-bottom:6px}
+  .file em{display:block;font-size:13.5px;color:var(--muted);font-style:normal;margin-bottom:16px}
+  .file .go{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+
+  /* ---------- Scenario blocks (Artifact 4) ---------- */
+  .scenario{border:1px solid var(--line);border-left:2px solid var(--red);
+    padding:28px;margin-top:22px;background:var(--surface)}
+  .scenario h4{margin:0 0 6px;font-size:17px}
+  .scenario .situation{font-size:13.5px;color:var(--muted);margin:0 0 16px;
+    padding-bottom:14px;border-bottom:1px dashed var(--line)}
+  .scenario p{color:#cfd0d5;font-size:14.5px}
+  .scenario .label{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--red);margin:18px 0 6px;font-weight:700}
+  .scenario ul{margin:6px 0 0 18px;color:#cfd0d5;font-size:14.5px;line-height:1.7}
+
+  /* ---------- Prose panel ---------- */
+  .panel{border:1px solid var(--line);background:var(--surface);padding:34px}
+  .panel h3{color:var(--text);font-size:19px;margin:26px 0 8px}
+  .panel h3:first-of-type{margin-top:0}
+  .panel h3::before{content:"— ";color:var(--red)}
+  .panel p{color:#cfd0d5;font-size:15px}
+  .disclosure{color:var(--muted);font-size:13px;margin-top:20px;
+    border-top:1px solid var(--line);padding-top:16px}
+
+  /* ---------- Skills ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line)}
+  .skill{background:var(--bg);padding:26px;transition:background .3s}
+  .skill:hover{background:var(--surface)}
+  .skill h4{margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted)}
   .skill ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
-  .skill li{font-size:13px;background:var(--surface-2);border:1px solid var(--border);padding:5px 10px;border-radius:8px;color:#dbe4f2}
+  .skill li{font-size:12.5px;background:var(--surface-2);border:1px solid var(--line);
+    padding:6px 12px;color:#dcdce0}
 
-  /* Contact */
-  .contact{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
-  .contact h3{margin:0 0 4px}
+  /* ---------- Contact ---------- */
+  .contact{border:1px solid var(--line);padding:44px;display:flex;flex-wrap:wrap;
+    gap:24px;justify-content:space-between;align-items:center;background:var(--surface)}
+  .contact h3{margin:0 0 6px;font-size:24px;letter-spacing:-.01em}
   .contact p{margin:0;color:var(--muted)}
 
-  footer{padding:28px 0 48px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--border)}
+  footer{padding:34px 0 54px;color:var(--muted);font-size:12px;letter-spacing:.06em;
+    text-align:center;border-top:1px solid var(--line)}
 
-  @media (max-width:640px){
-    nav ul{display:none}
-    .hero{padding:64px 0 40px}
+  /* ---------- Scroll reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);
+    transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn,.spec-row::before,nav a::after{transition:none}
   }
+  :focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+  @media (max-width:860px){nav ul{display:none}}
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="brand">Nikhil<span>.</span>Reddy</div>
+    <div class="brand">NIKHIL<i>.</i>REDDY</div>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#artifact-1">Artifact 1</a></li>
+        <li><a href="#artifact-2">Artifact 2</a></li>
+        <li><a href="#artifact-3">Artifact 3</a></li>
+        <li><a href="#artifact-4">Artifact 4</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#ai-itsm">AI in ITSM</a></li>
-        <li><a href="#reflection">Reflection</a></li>
-        <li><a href="#artifact-ml-dl">ML vs DL</a></li>
-        <li><a href="#artifact-ai-tutor">AI Tutor</a></li>
-        <li><a href="#artifact-data-challenges">Data Challenges</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -113,129 +205,459 @@
 </header>
 
 <main>
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">IT Operations · Data Analytics</span>
-      <h1>Nikhil Reddy Kethireddy<br/><span class="grad">IT Operations & Data Analytics Specialist</span></h1>
-      <p class="sub">Bridging the gap between robust IT infrastructure and data-driven operational efficiency. Experienced in ITSM, Cloud Administration (Azure / Intune), and Business Intelligence with Python, SQL, and Power BI.</p>
+      <span class="eyebrow">IT Operations &middot; Data Analytics &middot; AI/ML</span>
+      <h1>Nikhil Reddy<br/>Kethireddy
+        <span class="thin">IT Operations &amp; Data Analytics Specialist</span>
+      </h1>
+      <p class="sub">Bridging robust IT infrastructure and data-driven operational efficiency. Experienced in ITSM, cloud administration (Azure / Intune), and business intelligence with Python, SQL, and Power BI.</p>
       <div class="cta">
-        <a class="btn primary" href="#" download>⬇ Download Resume (PDF)</a>
-        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="#contact">Contact</a>
+        <a class="btn primary" href="files/Nikhil_Reddy_Kethireddy_Resume.pdf" download>Download Resume <span class="arrow">&rarr;</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/nikhil-kethireddy-5b0a28283/" target="_blank" rel="noopener">LinkedIn <span class="arrow">&rarr;</span></a>
+        <a class="btn" href="#contact">Contact <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
+  <!-- ================= ABOUT + VALUE PROPOSITION + AUDIENCE ================= -->
+  <section id="about">
     <div class="container">
-      <h2>About Me</h2>
-      <p class="section-lead">A modern, data-driven IT professional.</p>
-      <p>I am an MIS Graduate with a passion for optimizing enterprise IT ecosystems. With hands-on experience spanning Desktop Support, Endpoint Management (Intune / Azure), and ITSM frameworks at companies like <strong>Tech Mahindra</strong> and <strong>Accenture</strong>, I focus on maximizing operational uptime. Beyond day-to-day support, I leverage <strong>Python, SQL, and Power BI</strong> to turn infrastructure data into actionable business insights.</p>
+      <span class="eyebrow reveal">Profile</span>
+      <h2 class="reveal">About Me</h2>
+      <p class="section-lead reveal">A modern, data-driven IT professional.</p>
+      <div class="panel reveal">
+        <p>I am an MIS Graduate with a passion for optimizing enterprise IT ecosystems. With hands-on experience spanning Desktop Support, Endpoint Management (Intune / Azure), and ITSM frameworks at companies like <strong>Tech Mahindra</strong> and <strong>Accenture</strong>, I focus on maximizing operational uptime. Beyond day-to-day support, I leverage <strong>Python, SQL, and Power BI</strong> to turn infrastructure data into actionable business insights.</p>
+      </div>
+
+      <div class="spec reveal" style="margin-top:44px">
+        <div class="spec-row">
+          <div class="spec-label">Personal Value Proposition</div>
+          <div class="spec-value">I bring a combination most candidates don't: production IT operations experience <strong>and</strong> formal AI/ML training. I have supported the systems that machine learning models are deployed into — ticket queues, endpoint fleets, SLA-bound workflows — so as an AI/ML student and future leader, I evaluate every model, metric, and automation through the lens of whether it survives real operational conditions, not just whether it trains successfully. My value is turning AI concepts into reliable, measurable improvements in how IT actually runs.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Target Audience</div>
+          <div class="spec-value">This portfolio is built for <strong>hiring managers and technical leads</strong> filling IT Operations, Systems Administration, and Data Analytics roles — and for <strong>AI/ML program peers and collaborators</strong> evaluating my coursework. It is relevant to them because each artifact shows applied judgment on problems these roles face daily: choosing the right ML approach for a business constraint, diagnosing misleading metrics, and critically evaluating AI tools before trusting them in production.</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
+  <!-- ================= ARTIFACT 1 — AI & ML TIMELINE ================= -->
+  <section id="artifact-1">
     <div class="container">
-      <h2>Featured Projects</h2>
-      <p class="section-lead">Two sides of the same discipline — analytics that inform strategy, and operations that keep the business running.</p>
+      <span class="eyebrow reveal">Portfolio Artifact 01 &middot; Residency &middot; AI &amp; ML Timeline</span>
+      <h2 class="reveal">The Evolution of AI in IT Operations</h2>
+      <p class="section-lead reveal">A four-stage timeline tracing how artificial intelligence entered IT operations — from static scripts to agentic copilots — framed through the service-management systems I work in every day.</p>
 
-      <h3 style="margin:24px 0 14px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">📊 Data & Strategy Projects</h3>
-      <div class="grid">
-        <article class="card">
-          <span class="tag">Project 01</span>
-          <h3>Data-Driven Strategy for Product Development & Information Security</h3>
-          <p>Designing secure enterprise systems while driving product innovation through data insights.</p>
-          <div class="display">Displays: performance monitoring dashboards, integrated ERP/CRM architecture breakdown, and implemented security protocols.</div>
-          <div class="chips">
-            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">ERP / CRM</span>
-          </div>
+      <div class="timeline reveal">
+        <div class="stage">
+          <div class="num">01</div>
+          <h4>Rule-Based Automation</h4>
+          <p>Static scripts, macros, and if-then rules automating password resets and basic monitoring alerts.</p>
+        </div>
+        <div class="stage">
+          <div class="num">02</div>
+          <h4>Machine Learning</h4>
+          <p>Pattern recognition for ticket classification, anomaly detection in logs, and predictive incident analytics.</p>
+        </div>
+        <div class="stage">
+          <div class="num">03</div>
+          <h4>Conversational AI</h4>
+          <p>NLP-powered chatbots and virtual agents handling L1 support in Teams, Slack, and service portals.</p>
+        </div>
+        <div class="stage">
+          <div class="num">04</div>
+          <h4>Generative &amp; Agentic AI</h4>
+          <p>LLM-powered copilots that draft responses, summarize incidents, and autonomously execute runbooks with human oversight.</p>
+        </div>
+      </div>
+
+      <div class="spec reveal">
+        <div class="spec-row">
+          <div class="spec-label">Objective</div>
+          <div class="spec-value">Build a working understanding of how AI capabilities developed over time, and translate that general history into the specific domain where I apply it — IT service management — so the timeline informs real adoption decisions rather than staying abstract.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Process</div>
+          <div class="spec-value">Researched the major eras of AI development, mapped each era onto its concrete expression in IT operations (what tooling existed, what it automated, what it required of the humans around it), and organized the result as a four-stage progression from deterministic rules to agentic systems with human oversight.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Tools &amp; Technologies</div>
+          <div class="spec-value">Course materials and residency sessions; ITSM platform experience (ServiceNow) as the reference domain; HTML/CSS for the visual timeline presentation.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Unique Value</div>
+          <div class="spec-value">Most AI timelines list the same milestones — Turing, Deep Blue, ImageNet, ChatGPT. This one is grounded in a practitioner's domain: each stage names what actually changed inside a service desk, which is where I have worked and where I can verify the claims against experience.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Relevance</div>
+          <div class="spec-value">Understanding where a capability sits on this progression is how an IT leader judges vendor claims and adoption risk. A tool marketed as "AI" may be stage 1 automation; an agentic copilot demands governance that a chatbot never needed. The timeline is a decision aid, not a history lesson.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">References</div>
+          <div class="spec-value">AIML-500 residency materials and course text, <em>A Beginner's Guide to Artificial Intelligence and Machine Learning</em>.</div>
+        </div>
+      </div>
+
+      <!-- Supporting reflection -->
+      <div style="margin-top:64px">
+        <span class="eyebrow reveal">Supporting Reflection &middot; Assessment 1.5</span>
+        <h2 class="reveal" style="font-size:clamp(24px,3vw,32px)">Reflection on AI/ML Leadership &amp; Change Management</h2>
+        <div class="grid reveal" style="margin-top:24px">
+          <article class="cell">
+            <span class="tag">Strengths</span>
+            <h3>Top 3 Strengths</h3>
+            <p>For the <strong>AI/ML Leadership</strong> assessment, my strongest areas were <strong>technology adaptability, problem-solving, and continuous learning</strong>. Working as a Desktop Support Engineer at Tech Mahindra and previously in service desk roles has required me to quickly learn new technologies, troubleshoot complex issues, and stay current with evolving tools such as Azure, Intune, and AI-assisted solutions.</p>
+            <p>For the <strong>Change Management</strong> assessment, my top strengths were <strong>communication, collaboration, and adaptability</strong>. Throughout my career, I have worked with cross-functional teams, supported end users through technology transitions, and helped implement new processes while maintaining service quality.</p>
+          </article>
+          <article class="cell">
+            <span class="tag">Growth</span>
+            <h3>Top 3 Areas for Growth</h3>
+            <p>On the AI/ML side, I identified <strong>strategic AI planning, AI governance and ethics, and leading large-scale AI initiatives</strong> as areas for improvement. While I actively use AI tools and recently worked on the TED Talk Speaker Recommendation Bot project, I would like more experience connecting AI strategies to broader organizational goals.</p>
+            <p>For Change Management, my areas for growth were <strong>managing resistance to change, measuring long-term change success, and influencing stakeholders</strong>. Supporting IT changes is a regular part of my role, but leading enterprise-wide change initiatives would help strengthen these skills.</p>
+          </article>
+        </div>
+        <div class="panel reveal" style="margin-top:22px">
+          <h3>My Opinion of the Assessments</h3>
+          <p>I found both assessments useful because they encouraged self-reflection and helped identify practical strengths and development opportunities. Rather than serving as precise measurements, they act as a starting point for leadership growth. One limitation is that self-assessments depend heavily on personal perception, which can sometimes lead to overestimating or underestimating abilities. I believe combining self-assessments with peer or supervisor feedback would provide a more complete evaluation.</p>
+          <h3>Revisions I Would Make</h3>
+          <p>For the <strong>AI/ML assessment</strong>, I would add questions related to ethical AI use, data privacy, cybersecurity considerations, and responsible AI governance. These topics are becoming increasingly important as organizations adopt AI technologies.</p>
+          <p>For the <strong>Change Management assessment</strong>, I would include questions that focus on leading remote or hybrid teams, measuring adoption rates, and using data to evaluate the success of change initiatives. Based on the articles and my own experience, I would also add more questions that assess a leader's ability to communicate the <em>"why"</em> behind change, not just the implementation process itself.</p>
+          <h3>Closing Thoughts</h3>
+          <p>Overall, the assessments reinforced the idea that successful change leadership requires a balance of <strong>technical knowledge, communication skills, adaptability, and a commitment to continuous learning</strong>. As AI continues to evolve and become more integrated into business operations, leaders must be able to guide both technology adoption and the people impacted by that change.</p>
+          <p class="disclosure"><strong>AI Use Disclosure:</strong> I used Microsoft Copilot to help rephrase and improve the clarity and organization of my reflection. The ideas, experiences, and opinions expressed in this post are my own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARTIFACT 2 — ML vs DL ================= -->
+  <section id="artifact-2">
+    <div class="container">
+      <span class="eyebrow reveal">Portfolio Artifact 02 &middot; Assessment 2.3 &middot; ML vs. Deep Learning</span>
+      <h2 class="reveal">Matching the Tool to the Problem: Machine Learning vs. Deep Learning</h2>
+      <p class="section-lead reveal">A case study comparing two real-world AI applications to show when traditional machine learning is the right choice, when deep learning earns its cost — and why picking the most advanced tool is not always the right business decision.</p>
+
+      <div class="spec reveal">
+        <div class="spec-row">
+          <div class="spec-label">Objective</div>
+          <div class="spec-value">Evaluate two real-world AI applications to determine when traditional ML versus deep learning is the appropriate approach, and communicate that decision framework to a business audience.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Process</div>
+          <div class="spec-value">Selected two contrasting applications — customer churn prediction and CNN-based facial recognition — and analyzed each against three criteria: feature extraction, data requirements, and model complexity. For each, argued both directions: why the chosen approach fits, and why the alternative fails.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Tools &amp; Concepts</div>
+          <div class="spec-value">Support vector machines, logistic regression, convolutional neural networks; evaluation framing drawn from my analytics work in Python, SQL, and Power BI.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Unique Value</div>
+          <div class="spec-value">The case study argues both directions for each application — not only why the chosen technique fits, but why the alternative concretely fails (a deep network overfitting a few dozen clean tabular columns; an SVM with no mechanism to discover spatial patterns in raw pixels). That two-sided reasoning is the difference between describing techniques and being able to defend a model selection to stakeholders.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Relevance</div>
+          <div class="spec-value">Model selection under constraints — interpretability, data availability, compute cost — is the first judgment call in any AI adoption decision, including the AI-assisted ITSM tooling in my own field. This framework is directly reusable when evaluating whether a vendor's "AI-powered" solution matches the shape of the problem it claims to solve.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">References</div>
+          <div class="spec-value">AIML-500 Assessment 2.3 coursework; <em>A Beginner's Guide to Artificial Intelligence and Machine Learning</em> (course text).</div>
+        </div>
+      </div>
+
+      <div class="grid reveal" style="margin:26px 0 22px">
+        <article class="cell">
+          <span class="tag">Traditional ML — Customer Churn</span>
+          <p>Structured tabular data, known features, modest datasets, and a business need for interpretable predictions.</p>
         </article>
-
-        <article class="card">
-          <span class="tag">Project 02</span>
-          <h3>Customer Segmentation & Predictive Sales Forecasting</h3>
-          <p>Machine learning models to optimize marketing spend and predict demand across product lines.</p>
-          <div class="display">Displays: interactive Power BI / Tableau dashboard with K-Means clusters and time-series forecast charts.</div>
-          <div class="chips">
-            <span class="chip">Python</span><span class="chip">K-Means</span><span class="chip">Regression</span><span class="chip">Tableau</span>
-          </div>
+        <article class="cell">
+          <span class="tag">Deep Learning — Image Recognition</span>
+          <p>Raw, high-dimensional pixel data where features can't be hand-defined and massive datasets justify network complexity.</p>
         </article>
       </div>
 
-      <h3 style="margin:36px 0 14px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">🛠️ Infrastructure & IT Operations Case Studies</h3>
-      <div class="grid">
-        <article class="card">
-          <span class="tag alt">Case Study 03</span>
-          <h3>Modern Endpoint Management & Device Compliance</h3>
-          <p>Cloud-based device deployment and compliance at enterprise scale — administering accounts, troubleshooting ADFS, and participating in Intune deployment teams to keep fleets compliant.</p>
-          <div class="chips">
-            <span class="chip">Microsoft Intune</span><span class="chip">Azure AD</span><span class="chip">ADFS</span><span class="chip">Asset Lifecycle</span>
-          </div>
-        </article>
+      <article class="panel reveal">
+        <p>Machine learning and deep learning both enable computers to learn from data, but they differ fundamentally in how they handle features, how much data they require, and how complex their models are. A simple way to frame the difference: machine learning is like giving a student a checklist of things to look for, while deep learning is like teaching the student to read and letting them figure out the patterns through experience. This case study compares one real-world application of each approach and explains why the chosen technique fits the problem while the alternative does not.</p>
 
-        <article class="card">
-          <span class="tag alt">Case Study 04</span>
-          <h3>ITSM Optimization & SLA Compliance</h3>
-          <p>Handling high-volume, high-priority incident workflows: break-fix resolution, vendor procurement records (CDW), inventory control, and streamlined user onboarding.</p>
-          <div class="chips">
-            <span class="chip">ServiceNow</span><span class="chip">SLA / OLA</span><span class="chip">Procurement</span><span class="chip">Inventory</span>
-          </div>
-        </article>
-      </div>
+        <h3>Machine Learning: Customer Churn Prediction</h3>
+        <p>Telecommunications and subscription-based companies use models such as support vector machines and logistic regression to predict which customers are likely to cancel. A provider can analyze historical records — contract length, monthly charges, tenure, support tickets filed — to flag at-risk customers before they leave, allowing retention teams to intervene with targeted offers.</p>
+        <p>Traditional ML fits this problem for three reasons. First, the data is structured and tabular, and the meaningful features are already known to domain experts, so manual feature selection is straightforward and effective. Second, churn datasets are often modest in size — enough for an SVM or logistic regression to perform well. Third, the business needs interpretability: a retention team must understand why a customer was flagged, and simpler models provide that transparency directly.</p>
+        <p>Deep learning is not suitable here. Its core advantage — automatically discovering features from raw, high-dimensional data — is wasted on a few dozen clean database columns. A deep neural network would risk overfitting the limited data, demand far more computational power, and produce a black-box model that is harder to explain to stakeholders, typically with no accuracy improvement over traditional methods on tabular data.</p>
 
-      <h3 style="margin:36px 0 14px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">🤖 AI Product Build</h3>
-      <article class="card" style="padding:28px">
-        <span class="tag">Featured Build</span>
-        <h3>The Boyz — AI Speaker Bureau Recommendation Bot</h3>
-        <p>End-to-end AI product: an intelligent chatbot that matches event organizers with the right keynote speakers based on topic, audience, budget, language, and speaking style. Built from a deep-dive discovery interview through professional speaker profiling, model training, and a customer-facing conversational UI.</p>
-        <div class="display"><strong>My role:</strong> Product concept, data structuring of speaker profiles (keynote topics, target audience, pricing, travel), AI bot training & prompt design, testing recommendation quality, and go-to-market marketing collateral.</div>
+        <h3>Deep Learning: Image Recognition with CNNs</h3>
+        <p>Facial recognition systems such as Apple's Face ID use convolutional neural networks to identify users from raw camera data. The CNN processes millions of pixel values and learns, through its many layers, to detect progressively more abstract patterns — from simple edges to textures to complete facial structures — without any human defining what an eye or nose looks like.</p>
+        <p>Deep learning fits this problem precisely because the input is raw and unstructured. No human can manually write features that reliably describe a face across every lighting condition, angle, and individual. The automatic, layered feature learning of a deep network is exactly what the task demands, and today's enormous image datasets provide the training volume that deep learning requires.</p>
+        <p>Traditional ML is not suitable for this task. An SVM or decision tree fed raw pixels has no mechanism for discovering spatial patterns on its own, so it would depend entirely on hand-engineered image features — an approach that historically capped accuracy well below human performance. The complexity of a deep network is justified here because the problem itself is complex.</p>
+
+        <h3>Conclusion</h3>
+        <p>When features are known, data is limited, and interpretability matters, traditional machine learning is the better tool. When the data is raw and high-dimensional, features cannot be defined by hand, and large datasets are available, deep learning's added complexity earns its cost. Choosing between them is less about which is more advanced and more about matching the tool to the shape of the problem.</p>
+
         <div class="chips">
-          <span class="chip">AI / Chatbot</span><span class="chip">Prompt Engineering</span><span class="chip">Data Modeling</span><span class="chip">Recommendation Systems</span><span class="chip">Product Design</span>
+          <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">SVM / Logistic Regression</span><span class="chip">CNNs</span><span class="chip">Model Selection</span><span class="chip">Technical Communication</span>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:22px">
+        <p class="disclosure"><strong>AI Use Disclosure:</strong> I used AI assistance to help organize and refine the wording of this case study. The analysis, example selection, and conclusions reflect my own coursework and understanding.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= ARTIFACT 3 — AI TUTOR ================= -->
+  <section id="artifact-3">
+    <div class="container">
+      <span class="eyebrow reveal">Portfolio Artifact 03 &middot; Assignment 3.3 &middot; ML Training Methods</span>
+      <h2 class="reveal">Learning Machine Learning from an AI Tutor — and Testing Whether to Believe It</h2>
+      <p class="section-lead reveal">A guided tutoring session on how machine learning models learn, turned into a reusable reference guide. The interesting part wasn't the curriculum — it was what happened when I started pushing back on the tutor.</p>
+
+      <h3 class="reveal" style="margin:0 0 12px;font-size:11px;color:var(--muted);letter-spacing:.24em;text-transform:uppercase">Evidence</h3>
+      <div class="filegrid reveal" style="margin-bottom:30px">
+        <a class="file" href="ML_Training_Methods_Quick_Reference.pdf">
+          <strong>Quick Reference Guide (PDF)</strong>
+          <em>Two pages built from the session, written for professionals who evaluate machine learning proposals rather than build models.</em>
+          <span class="go">Download &rarr;</span>
+        </a>
+        <a class="file" href="Artifact3_Transcript.pdf">
+          <strong>Full Session Transcript (PDF)</strong>
+          <em>The complete tutoring conversation, including where I challenged the tutor's reliability.</em>
+          <span class="go">Download &rarr;</span>
+        </a>
+      </div>
+
+      <div class="spec reveal">
+        <div class="spec-row">
+          <div class="spec-label">Objective</div>
+          <div class="spec-value">Build a working foundation in machine learning training methods, and practise using an AI tutor as a learning tool without treating its output as authoritative. A second objective emerged during the session: converting a private learning conversation into something another person could actually use.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Tools &amp; Technologies</div>
+          <div class="spec-value">SchoolAI (AI tutoring platform), <em>A Beginner's Guide to Artificial Intelligence and Machine Learning</em> as supporting reading, and PDF authoring for the reference guide.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Value Proposition</div>
+          <div class="spec-value">Demonstrates two capabilities employers need: understanding how models learn well enough to judge whether a proposed solution fits a problem, and treating AI-generated explanations as claims to verify rather than answers to accept.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Unique Value</div>
+          <div class="spec-value">Most people use an AI tutor to get answers. I used one and then interrogated its reliability. My IT service management background also let me stress-test the concepts against a real system — the label-quality problem in ticket routing is invisible in a textbook example and obvious to anyone who has worked a service desk.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Relevance</div>
+          <div class="spec-value">The course objectives centre on applying foundational AI and machine learning concepts and evaluating AI tools critically. This artifact does both in one activity: it covers the core training methods, and it documents a deliberate check on the credibility of the tool teaching them.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">References</div>
+          <div class="spec-value"><em>A Beginner's Guide to Artificial Intelligence and Machine Learning.</em> AIML-500 Machine Learning Training Methods Coach [AI tutoring session], SchoolAI, July 2026.</div>
+        </div>
+      </div>
+
+      <article class="panel reveal" style="margin-top:26px">
+        <h3>Description</h3>
+        <p>For this coursework activity I worked through a structured session with an AI coaching bot covering the three training paradigms — supervised, unsupervised, and reinforcement learning — along with the role of algorithms, the training workflow, why models need repeated passes over data, and why data quality determines the ceiling on performance. Rather than stopping at the seven assigned questions, I brought my own examples from IT service management, corrected one of the tutor's analogies, answered a question it had left open earlier in the session, and challenged it directly on why I should trust explanations it had supplied without independent verification. I then condensed the session into a two-page quick-reference guide aimed at technical professionals who need to evaluate machine learning proposals rather than build models.</p>
+
+        <h3>Process</h3>
+        <p>I worked through the seven core questions in sequence, from supervised learning through to the role of data. At each stage I tested the concept against a scenario from my own work. On supervised learning I raised help desk ticket routing — thousands of historical tickets already tagged by category — and identified that the model can only inherit the accuracy of whoever tagged them; a category that was habitually misfiled will be reproduced faithfully.</p>
+        <p>When the tutor compared algorithms to a recipe, I refined the analogy: data and features are the ingredients, and compute is the oven. I returned to an unanswered question from earlier in the session to state that a reinforcement agent maximises cumulative rather than immediate reward, then pressed on the mechanism — how an agent can recognise that an apparently bad move was worth making — until credit assignment made sense.</p>
+        <p>Asked where a limited budget should go, I argued for better features over more data, since additional data at small scale tends to add noise and feature work requires no labelling team. Finally I asked the tutor how I could trust information it had entirely supplied, and recorded its answer: cross-reference, test it, ask why. I used that exchange as the closing section of the guide.</p>
+
+        <div class="chips">
+          <span class="chip">Supervised / Unsupervised / Reinforcement</span><span class="chip">Training Workflow</span><span class="chip">Data Quality</span><span class="chip">Feature Engineering</span><span class="chip">AI Tool Evaluation</span><span class="chip">Technical Documentation</span>
+        </div>
+
+        <p class="disclosure"><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page and the reference guide. The session, the examples drawn from my own work, and the conclusions are my own.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= ARTIFACT 4 — DATA CHALLENGES ================= -->
+  <section id="artifact-4">
+    <div class="container">
+      <span class="eyebrow reveal">Portfolio Artifact 04 &middot; Assignment 4.3 &middot; Data Challenge Scenarios</span>
+      <h2 class="reveal">Diagnosing Data Failures in Production Machine Learning</h2>
+      <p class="section-lead reveal">Three escalating scenarios — missing data, extreme class imbalance, and a production feedback loop. In every one, the reported metric looked acceptable while the model was failing. This artifact documents how I found the real problem underneath each.</p>
+
+      <h3 class="reveal" style="margin:0 0 12px;font-size:11px;color:var(--muted);letter-spacing:.24em;text-transform:uppercase">Evidence</h3>
+      <div class="filegrid reveal" style="margin-bottom:30px">
+        <a class="file" href="Artifact4_Transcript.pdf">
+          <strong>Full Session Transcript (PDF)</strong>
+          <em>The complete coaching session across all three scenarios, including the points where I challenged the coach's framing.</em>
+          <span class="go">Download &rarr;</span>
+        </a>
+        <a class="file" href="Artifact4_Decision_Brief.pdf">
+          <strong>Decision Brief (PDF)</strong>
+          <em>The session restructured as a practitioner reference — situation, diagnosis, approach, and open questions for each scenario.</em>
+          <span class="go">Download &rarr;</span>
+        </a>
+      </div>
+
+      <div class="spec reveal">
+        <div class="spec-row">
+          <div class="spec-label">Objective</div>
+          <div class="spec-value">Apply principled approaches to data cleaning and imputation, diagnose why an evaluation metric can misrepresent real-world performance, and explain how production feedback loops contaminate the very data used to correct them.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Process</div>
+          <div class="spec-value">For each scenario I separated the reported symptom from the underlying data defect, proposed an approach covering detection, correction, and prevention, then pressure-tested my own reasoning by questioning the coach rather than accepting its first answer.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Tools &amp; Technologies</div>
+          <div class="spec-value">SchoolAI (AIML-500 Data Challenge Scenarios Coach). Concepts applied: MCAR / MAR / MNAR missingness frameworks, group-wise imputation, train&ndash;test leakage control, class weighting, threshold tuning, probability calibration, anomaly detection, and bandit-based exploration.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Value Proposition</div>
+          <div class="spec-value">I can identify the moment a model's reported metric stops describing its actual behaviour, and explain what to measure instead. In all three scenarios the technical remedy was straightforward once the problem was framed correctly — the difficult work was recognising that the headline number was hiding the failure.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Unique Value</div>
+          <div class="spec-value">I did not treat the coach as an authority to agree with. I challenged its percentage-based rule for unusable columns and replaced it with a mechanism-based one, questioned whether classification was the right framing before optimising within it, and raised the probability-calibration problem myself rather than waiting to be told.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Relevance</div>
+          <div class="spec-value">Organisations increasingly deploy models into environments that shift underneath them and act on their own outputs. Imputation strategy, leakage prevention, metric selection under imbalance, and feedback-loop awareness are what separate a model that trains successfully from one that survives production.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">References</div>
+          <div class="spec-value">AIML-500 Data Challenge Scenarios Coach [AI coaching session], SchoolAI, August 2026.</div>
+        </div>
+      </div>
+
+      <article class="panel reveal" style="margin-top:26px">
+        <h3>Description</h3>
+        <p>For this coursework activity I completed an interactive session with an AI coaching bot that presented three real-world data challenges of increasing difficulty. Each required a full approach — decisions, reasoning, and solution — before the coach responded with critique and follow-up pressure. For this portfolio I have restructured the conversation into a technical decision brief, presenting each scenario the way a practitioner would document it, and resolving one edge case I left unanswered during the live session.</p>
+
+        <div class="scenario">
+          <h4>Scenario 1 — Missing Data in a House Price Model</h4>
+          <p class="situation">10,000 property records. Roughly 15% of rows have missing values across <em>year built</em>, <em>square footage</em>, and the target variable <em>sale price</em>.</p>
+          <span class="label">My approach</span>
+          <ul>
+            <li><strong>Target variable:</strong> Rows missing <em>sale price</em> cannot train the model, so those rows are dropped — the rows, not the column. But first, check <em>why</em> they are missing. If unsold or withdrawn listings are systematically the ones without a price, dropping them silently narrows what the model is actually trained on.</li>
+            <li><strong>Square footage:</strong> Likely the strongest predictor, so the column stays. Instead of a global median, impute from comparable properties — same neighbourhood, same bedroom count — which preserves the relationships between features rather than flattening every missing house to "average." Add a binary flag marking imputed values, in case the missingness itself carries signal.</li>
+            <li><strong>Year built:</strong> Lower predictive weight, and probably missing where county records are incomplete. Median imputation with a flag is defensible — unless the missing records skew toward older properties, in which case imputation papers over a real pattern.</li>
+            <li><strong>Leakage control:</strong> Compute all imputation statistics from the training split only. Deriving fill values from the full dataset leaks test information into training and inflates evaluation scores.</li>
+          </ul>
+          <span class="label">Where I pushed back</span>
+          <p>The coach initially framed column usability as a percentage threshold — under 5% safe, over 30% drop. I challenged that: 40% missing completely at random is easier to handle than 10% missing for a systematic reason. The coach agreed and introduced the proper framework — MCAR, MAR, and MNAR. The percentage tells you how much information you lost; the mechanism tells you whether you introduced bias. Only the second one can poison a model.</p>
+          <span class="label">Edge case I resolved afterward</span>
+          <p>The coach asked what happens when a neighbourhood has too few complete records to support a reliable group median — a question I did not answer during the session. The answer is hierarchical fallback: impute from the narrowest group that meets a minimum sample size, widen the grouping (neighbourhood &rarr; district &rarr; city) when it does not, and record which level was used so the added uncertainty stays visible downstream.</p>
+        </div>
+
+        <div class="scenario">
+          <h4>Scenario 2 — Extreme Class Imbalance in Fraud Detection</h4>
+          <p class="situation">1 million transactions, 0.5% fraudulent. The model reports 99.5% accuracy but catches only 12% of actual fraud.</p>
+          <span class="label">Diagnosis</span>
+          <p>The model has learned that predicting "not fraud" is correct 99.5% of the time. Accuracy is not measuring fraud detection here — it is measuring class prevalence.</p>
+          <span class="label">My approach</span>
+          <p>My first question was whether classification is the right framing at all. At 0.5% positives, anomaly detection — modelling normal behaviour and flagging deviation — may fit better, particularly because fraud is adversarial and its patterns shift over time. Within a classification framework, the two levers are class weighting, which changes the decision boundary the model learns, and threshold tuning, which changes only how the outputs are interpreted afterward. These operate at different stages; they are not the same adjustment made twice.</p>
+          <span class="label">The failure I surfaced</span>
+          <p>Heavy class weighting distorts probability calibration. A weighted model's output of 0.7 no longer means a 70% likelihood of fraud. If downstream systems simply threshold that score, the relative ordering still holds and nothing breaks. But if they consume it as a calibrated risk figure — for tiered verification, cost-benefit logic, or ranking across models — every decision built on it is systematically wrong. The remedy is to calibrate after training and before those numbers are exposed, using Platt scaling or isotonic regression. This failure is invisible in accuracy <em>and</em> in recall.</p>
+        </div>
+
+        <div class="scenario">
+          <h4>Scenario 3 — Drift and Feedback Loops in Dynamic Pricing</h4>
+          <p class="situation">A ride-share surge pricing model, stable for three months, shows a 40% error increase concentrated in weekend evenings in specific neighbourhoods. It underprices surge there; drivers avoid the zones; riders wait. A competitor launched in those neighbourhoods two weeks earlier and shifted rider price sensitivity.</p>
+          <span class="label">Diagnosis</span>
+          <p>This is not only competitor-driven drift. It is a feedback loop. Recent demand data from those zones was generated under the model's own mispricing, so retraining on it means learning from the consequences of the original error. The observed demand is not the demand that would exist at correct pricing.</p>
+          <span class="label">My approach</span>
+          <p>Observation cannot resolve this, because every available data point is contaminated by the pricing decisions that caused the problem. The fix is intervention — randomised pricing experiments, or a permanent exploration component in the pricing policy, so the model receives causal signal about the price&ndash;demand relationship instead of an echo of its own behaviour. Unaffected neighbourhoods serve as controls, separating competitor impact from self-inflicted damage. In production this is typically implemented through bandit approaches that balance exploration against exploitation, accepting deliberate short-term pricing losses as the cost of not drifting into a worse failure.</p>
+        </div>
+
+        <h3 style="margin-top:28px">What I Took From It</h3>
+        <p>The technical fix was the easy part in all three cases. The harder question was whether I was measuring the right thing to begin with. Accuracy on the fraud model, aggregate error on the pricing model, and a clean-looking dataset in the housing scenario were each concealing the actual failure. That habit — interrogating the metric before trusting it — is what this artifact is meant to demonstrate.</p>
+
+        <div class="chips">
+          <span class="chip">Missing Data / MCAR-MAR-MNAR</span><span class="chip">Imputation Strategy</span><span class="chip">Data Leakage</span><span class="chip">Class Imbalance</span><span class="chip">Probability Calibration</span><span class="chip">Model Drift</span><span class="chip">Feedback Loops</span><span class="chip">Causal vs. Observational Data</span>
+        </div>
+
+        <p class="disclosure"><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page. The session responses, the reasoning, and the conclusions are my own.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="container">
+      <span class="eyebrow reveal">Beyond Coursework</span>
+      <h2 class="reveal">Featured Projects</h2>
+      <p class="section-lead reveal">Two sides of the same discipline — analytics that inform strategy, and operations that keep the business running.</p>
+
+      <h3 class="reveal" style="margin:24px 0 14px;font-size:11px;color:var(--muted);letter-spacing:.24em;text-transform:uppercase">Data &amp; Strategy Projects</h3>
+      <div class="grid reveal">
+        <article class="cell">
+          <span class="tag">Project 01</span>
+          <h3>Data-Driven Strategy for Product Development &amp; Information Security</h3>
+          <p>Designing secure enterprise systems while driving product innovation through data insights.</p>
+          <div class="note">Displays: performance monitoring dashboards, integrated ERP/CRM architecture breakdown, and implemented security protocols.</div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">ERP / CRM</span></div>
+        </article>
+        <article class="cell">
+          <span class="tag">Project 02</span>
+          <h3>Customer Segmentation &amp; Predictive Sales Forecasting</h3>
+          <p>Machine learning models to optimize marketing spend and predict demand across product lines.</p>
+          <div class="note">Displays: interactive Power BI / Tableau dashboard with K-Means clusters and time-series forecast charts.</div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">K-Means</span><span class="chip">Regression</span><span class="chip">Tableau</span></div>
+        </article>
+      </div>
+
+      <h3 class="reveal" style="margin:40px 0 14px;font-size:11px;color:var(--muted);letter-spacing:.24em;text-transform:uppercase">Infrastructure &amp; IT Operations Case Studies</h3>
+      <div class="grid reveal">
+        <article class="cell">
+          <span class="tag">Case Study 03</span>
+          <h3>Modern Endpoint Management &amp; Device Compliance</h3>
+          <p>Cloud-based device deployment and compliance at enterprise scale — administering accounts, troubleshooting ADFS, and participating in Intune deployment teams to keep fleets compliant.</p>
+          <div class="chips"><span class="chip">Microsoft Intune</span><span class="chip">Azure AD</span><span class="chip">ADFS</span><span class="chip">Asset Lifecycle</span></div>
+        </article>
+        <article class="cell">
+          <span class="tag">Case Study 04</span>
+          <h3>ITSM Optimization &amp; SLA Compliance</h3>
+          <p>Handling high-volume, high-priority incident workflows: break-fix resolution, vendor procurement records (CDW), inventory control, and streamlined user onboarding.</p>
+          <div class="chips"><span class="chip">ServiceNow</span><span class="chip">SLA / OLA</span><span class="chip">Procurement</span><span class="chip">Inventory</span></div>
+        </article>
+      </div>
+
+      <h3 class="reveal" style="margin:40px 0 14px;font-size:11px;color:var(--muted);letter-spacing:.24em;text-transform:uppercase">AI Product Build</h3>
+      <article class="panel reveal">
+        <span class="tag">Featured Build</span>
+        <h3 style="margin-top:6px">The Boyz — AI Speaker Bureau Recommendation Bot</h3>
+        <p>End-to-end AI product: an intelligent chatbot that matches event organizers with the right keynote speakers based on topic, audience, budget, language, and speaking style. Built from a deep-dive discovery interview through professional speaker profiling, model training, and a customer-facing conversational UI.</p>
+        <div class="note"><strong>My role:</strong> Product concept, data structuring of speaker profiles (keynote topics, target audience, pricing, travel), AI bot training &amp; prompt design, testing recommendation quality, and go-to-market marketing collateral.</div>
+        <div class="chips"><span class="chip">AI / Chatbot</span><span class="chip">Prompt Engineering</span><span class="chip">Data Modeling</span><span class="chip">Recommendation Systems</span><span class="chip">Product Design</span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:24px">
           <figure style="margin:0">
-            <img src="theboyz-process.png" alt="From Interview to AI Speaker Bot — 6-step project journey infographic" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08);display:block" loading="lazy" />
+            <img src="theboyz-process.png" alt="From Interview to AI Speaker Bot — 6-step project journey infographic" style="border:1px solid var(--line)" loading="lazy" />
             <figcaption style="font-size:13px;color:var(--muted);margin-top:8px">Project journey — from discovery interview to a live speaker-recommendation bot.</figcaption>
           </figure>
           <figure style="margin:0">
-            <img src="theboyz-marketing.png" alt="The Boyz AI Speaker Bureau — Find, Match, Book in seconds marketing infographic" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08);display:block" loading="lazy" />
+            <img src="theboyz-marketing.png" alt="The Boyz AI Speaker Bureau — Find, Match, Book in seconds marketing infographic" style="border:1px solid var(--line)" loading="lazy" />
             <figcaption style="font-size:13px;color:var(--muted);margin-top:8px">Go-to-market one-pager — value props, how-it-works, and launch offer.</figcaption>
           </figure>
         </div>
       </article>
 
-      <article class="card" style="padding:28px;margin-top:22px">
+      <article class="panel reveal" style="margin-top:22px">
         <span class="tag">Live Chatbot</span>
-        <h3>TedTalker — AI Chatbot (Live Demo)</h3>
+        <h3 style="margin-top:6px">TedTalker — AI Chatbot (Live Demo)</h3>
         <p>A browser-based AI chatbot I built and deployed on GitHub Pages. It demonstrates conversational UX, prompt design, and lightweight front-end integration for an AI assistant experience.</p>
-        <div class="display"><strong>Try it live:</strong> <a href="https://homakesava56.github.io/Tedtalker/" target="_blank" rel="noopener" style="color:var(--accent)">https://homakesava56.github.io/Tedtalker/</a></div>
-        <div class="chips">
-          <span class="chip">Chatbot</span><span class="chip">HTML / JS</span><span class="chip">Prompt Engineering</span><span class="chip">GitHub Pages</span>
-        </div>
-        <div style="margin-top:18px">
-          <a class="btn primary" href="https://homakesava56.github.io/Tedtalker/" target="_blank" rel="noopener">🚀 Launch TedTalker</a>
+        <div class="note"><strong>Try it live:</strong> <a href="https://homakesava56.github.io/Tedtalker/" target="_blank" rel="noopener" style="color:var(--red)">homakesava56.github.io/Tedtalker</a></div>
+        <div class="chips"><span class="chip">Chatbot</span><span class="chip">HTML / JS</span><span class="chip">Prompt Engineering</span><span class="chip">GitHub Pages</span></div>
+        <div style="margin-top:20px">
+          <a class="btn primary" href="https://homakesava56.github.io/Tedtalker/" target="_blank" rel="noopener">Launch TedTalker <span class="arrow">&rarr;</span></a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- AI IN ITSM -->
+  <!-- ================= AI IN ITSM ================= -->
   <section id="ai-itsm">
     <div class="container">
-      <h2>AI in ITSM & Ticket Management</h2>
-      <p class="section-lead">How AI is reshaping IT Service Management — and how we are applying it inside our organization.</p>
-
-      <div class="grid">
-        <article class="card">
+      <span class="eyebrow reveal">Domain Perspective</span>
+      <h2 class="reveal">AI in ITSM &amp; Ticket Management</h2>
+      <p class="section-lead reveal">How AI is reshaping IT Service Management — and how we are applying it inside our organization.</p>
+      <div class="grid reveal">
+        <article class="cell">
           <span class="tag">How we use it</span>
           <h3>AI-Assisted Ticket Management</h3>
           <p>In our ITSM workflow, AI helps at every stage of the ticket lifecycle:</p>
-          <ul style="margin:10px 0 0 18px;color:var(--muted);line-height:1.75">
+          <ul style="margin:10px 0 0 18px;color:var(--muted);line-height:1.75;font-size:14.5px">
             <li><strong>Smart triage:</strong> AI auto-classifies incoming tickets by category, urgency, and impact, and routes them to the right queue.</li>
             <li><strong>Suggested resolutions:</strong> The tool surfaces similar past tickets and KB articles, reducing average handle time.</li>
             <li><strong>Auto-drafted responses:</strong> Copilot-style suggestions help engineers reply consistently and faster.</li>
@@ -243,12 +665,11 @@
             <li><strong>Chatbots for L1:</strong> Password resets, software requests, and status lookups are self-served, freeing engineers for complex work.</li>
           </ul>
         </article>
-
-        <article class="card">
-          <span class="tag alt">Impact</span>
+        <article class="cell">
+          <span class="tag">Impact</span>
           <h3>Why It Matters</h3>
           <p>AI in ITSM directly improves the metrics that matter to operations:</p>
-          <ul style="margin:10px 0 0 18px;color:var(--muted);line-height:1.75">
+          <ul style="margin:10px 0 0 18px;color:var(--muted);line-height:1.75;font-size:14.5px">
             <li>Faster <strong>MTTR</strong> through intelligent recommendations.</li>
             <li>Higher <strong>SLA compliance</strong> via automatic prioritization.</li>
             <li>Better <strong>user experience</strong> with 24/7 self-service.</li>
@@ -257,320 +678,26 @@
           </ul>
         </article>
       </div>
-
-      <article class="card" style="padding:28px;margin-top:22px">
-        <span class="tag">Evolution</span>
-        <h3>The Evolution of AI in IT Operations</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:14px">
-          <div><h4 style="color:var(--accent)">1. Rule-Based Automation</h4><p style="color:var(--muted)">Static scripts, macros, and if-then rules automating password resets and basic monitoring alerts.</p></div>
-          <div><h4 style="color:var(--accent)">2. Machine Learning</h4><p style="color:var(--muted)">Pattern recognition for ticket classification, anomaly detection in logs, and predictive incident analytics.</p></div>
-          <div><h4 style="color:var(--accent)">3. Conversational AI</h4><p style="color:var(--muted)">NLP-powered chatbots and virtual agents handling L1 support in Teams, Slack, and service portals.</p></div>
-          <div><h4 style="color:var(--accent)">4. Generative & Agentic AI</h4><p style="color:var(--muted)">LLM-powered copilots that draft responses, summarize incidents, and autonomously execute runbooks with human oversight.</p></div>
-        </div>
-      </article>
     </div>
   </section>
 
-  <!-- REFLECTION (ARTIFACT 1) -->
-  <section id="reflection">
-    <div class="container">
-      <h2>Assessment 1.5 — Reflection on AI/ML Leadership & Change Management</h2>
-      <p class="section-lead">A personal reflection on two self-assessments completed as part of my leadership development.</p>
-
-      <div class="grid">
-        <article class="card">
-          <span class="tag">Strengths</span>
-          <h3>Top 3 Strengths</h3>
-          <p>For the <strong>AI/ML Leadership</strong> assessment, my strongest areas were <strong>technology adaptability, problem-solving, and continuous learning</strong>. Working as a Desktop Support Engineer at Tech Mahindra and previously in service desk roles has required me to quickly learn new technologies, troubleshoot complex issues, and stay current with evolving tools such as Azure, Intune, and AI-assisted solutions.</p>
-          <p>For the <strong>Change Management</strong> assessment, my top strengths were <strong>communication, collaboration, and adaptability</strong>. Throughout my career, I have worked with cross-functional teams, supported end users through technology transitions, and helped implement new processes while maintaining service quality.</p>
-        </article>
-
-        <article class="card">
-          <span class="tag alt">Growth</span>
-          <h3>Top 3 Areas for Growth</h3>
-          <p>On the AI/ML side, I identified <strong>strategic AI planning, AI governance and ethics, and leading large-scale AI initiatives</strong> as areas for improvement. While I actively use AI tools and recently worked on the TED Talk Speaker Recommendation Bot project, I would like more experience connecting AI strategies to broader organizational goals.</p>
-          <p>For Change Management, my areas for growth were <strong>managing resistance to change, measuring long-term change success, and influencing stakeholders</strong>. Supporting IT changes is a regular part of my role, but leading enterprise-wide change initiatives would help strengthen these skills.</p>
-        </article>
-      </div>
-
-      <article class="card" style="padding:28px;margin-top:22px">
-        <span class="tag">Opinion</span>
-        <h3>My Opinion of the Assessments</h3>
-        <p>I found both assessments useful because they encouraged self-reflection and helped identify practical strengths and development opportunities. Rather than serving as precise measurements, they act as a starting point for leadership growth. One limitation is that self-assessments depend heavily on personal perception, which can sometimes lead to overestimating or underestimating abilities. I believe combining self-assessments with peer or supervisor feedback would provide a more complete evaluation.</p>
-      </article>
-
-      <article class="card" style="padding:28px;margin-top:22px">
-        <span class="tag alt">Revisions</span>
-        <h3>Revisions I Would Make</h3>
-        <p>For the <strong>AI/ML assessment</strong>, I would add questions related to ethical AI use, data privacy, cybersecurity considerations, and responsible AI governance. These topics are becoming increasingly important as organizations adopt AI technologies.</p>
-        <p>For the <strong>Change Management assessment</strong>, I would include questions that focus on leading remote or hybrid teams, measuring adoption rates, and using data to evaluate the success of change initiatives. Based on the articles and my own experience, I would also add more questions that assess a leader's ability to communicate the <em>"why"</em> behind change, not just the implementation process itself.</p>
-      </article>
-
-      <article class="card" style="padding:28px;margin-top:22px">
-        <h3>Closing Thoughts</h3>
-        <p>Overall, the assessments reinforced the idea that successful change leadership requires a balance of <strong>technical knowledge, communication skills, adaptability, and a commitment to continuous learning</strong>. As AI continues to evolve and become more integrated into business operations, leaders must be able to guide both technology adoption and the people impacted by that change.</p>
-        <p style="color:var(--muted);font-size:13px;margin-top:14px;border-top:1px solid var(--border);padding-top:14px"><strong>AI Use Disclosure:</strong> I used Microsoft Copilot to help rephrase and improve the clarity and organization of my reflection. The ideas, experiences, and opinions expressed in this post are my own.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ARTIFACT 2 — ML vs DL Case Study -->
-  <section id="artifact-ml-dl">
-    <div class="container">
-      <span class="eyebrow">Portfolio Artifact 02 · Assessment 2.3 · ML vs. Deep Learning</span>
-      <h2 style="margin-top:16px">Matching the Tool to the Problem: Machine Learning vs. Deep Learning</h2>
-      <p class="section-lead">A case study comparing two real-world AI applications to show when traditional machine learning is the right choice, when deep learning earns its cost — and why picking the most advanced tool is not always the right business decision.</p>
-
-      <!-- Template elements: Objective / Process / Tools / Value Proposition -->
-      <div class="grid" style="margin-bottom:22px">
-        <article class="card">
-          <span class="tag">Objective</span>
-          <p>Evaluate two real-world AI applications to determine when traditional ML versus deep learning is the appropriate approach, and communicate that decision framework to a business audience.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Process</span>
-          <p>Selected two contrasting applications — customer churn prediction and CNN-based facial recognition — and analyzed each against three criteria: feature extraction, data requirements, and model complexity.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Tools &amp; Concepts</span>
-          <p>Support vector machines, logistic regression, convolutional neural networks; evaluation framing drawn from my analytics work in Python, SQL, and Power BI.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Value Proposition</span>
-          <p>Demonstrates the ability to match an AI approach to business constraints — interpretability, data availability, and cost — a judgment skill central to AI adoption decisions in IT operations.</p>
-        </article>
-      </div>
-
-      <!-- Head-to-head summary -->
-      <div class="grid" style="margin-bottom:22px">
-        <article class="card">
-          <span class="tag">Traditional ML — Customer Churn</span>
-          <p>Structured tabular data, known features, modest datasets, and a business need for interpretable predictions.</p>
-        </article>
-        <article class="card">
-          <span class="tag alt">Deep Learning — Image Recognition</span>
-          <p>Raw, high-dimensional pixel data where features can't be hand-defined and massive datasets justify network complexity.</p>
-        </article>
-      </div>
-
-      <!-- Evidence: the full case study -->
-      <article class="card" style="padding:28px">
-        <p>Machine learning and deep learning both enable computers to learn from data, but they differ fundamentally in how they handle features, how much data they require, and how complex their models are. A simple way to frame the difference: machine learning is like giving a student a checklist of things to look for, while deep learning is like teaching the student to read and letting them figure out the patterns through experience. This case study compares one real-world application of each approach and explains why the chosen technique fits the problem while the alternative does not.</p>
-
-        <h3 style="color:var(--accent);margin-top:22px">Machine Learning: Customer Churn Prediction</h3>
-        <p>Telecommunications and subscription-based companies use models such as support vector machines and logistic regression to predict which customers are likely to cancel. A provider can analyze historical records — contract length, monthly charges, tenure, support tickets filed — to flag at-risk customers before they leave, allowing retention teams to intervene with targeted offers.</p>
-        <p>Traditional ML fits this problem for three reasons. First, the data is structured and tabular, and the meaningful features are already known to domain experts, so manual feature selection is straightforward and effective. Second, churn datasets are often modest in size — enough for an SVM or logistic regression to perform well. Third, the business needs interpretability: a retention team must understand why a customer was flagged, and simpler models provide that transparency directly.</p>
-        <p>Deep learning is not suitable here. Its core advantage — automatically discovering features from raw, high-dimensional data — is wasted on a few dozen clean database columns. A deep neural network would risk overfitting the limited data, demand far more computational power, and produce a black-box model that is harder to explain to stakeholders, typically with no accuracy improvement over traditional methods on tabular data.</p>
-
-        <h3 style="color:var(--accent);margin-top:22px">Deep Learning: Image Recognition with CNNs</h3>
-        <p>Facial recognition systems such as Apple's Face ID use convolutional neural networks to identify users from raw camera data. The CNN processes millions of pixel values and learns, through its many layers, to detect progressively more abstract patterns — from simple edges to textures to complete facial structures — without any human defining what an eye or nose looks like.</p>
-        <p>Deep learning fits this problem precisely because the input is raw and unstructured. No human can manually write features that reliably describe a face across every lighting condition, angle, and individual. The automatic, layered feature learning of a deep network is exactly what the task demands, and today's enormous image datasets provide the training volume that deep learning requires.</p>
-        <p>Traditional ML is not suitable for this task. An SVM or decision tree fed raw pixels has no mechanism for discovering spatial patterns on its own, so it would depend entirely on hand-engineered image features — an approach that historically capped accuracy well below human performance. The complexity of a deep network is justified here because the problem itself is complex.</p>
-
-        <h3 style="color:var(--accent);margin-top:22px">Conclusion</h3>
-        <p>When features are known, data is limited, and interpretability matters, traditional machine learning is the better tool. When the data is raw and high-dimensional, features cannot be defined by hand, and large datasets are available, deep learning's added complexity earns its cost. Choosing between them is less about which is more advanced and more about matching the tool to the shape of the problem.</p>
-
-        <div class="chips">
-          <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">SVM / Logistic Regression</span><span class="chip">CNNs</span><span class="chip">Model Selection</span><span class="chip">Technical Communication</span>
-        </div>
-
-        <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>AI Use Disclosure:</strong> I used AI assistance to help organize and refine the wording of this case study. The analysis, example selection, and conclusions reflect my own coursework and understanding.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ARTIFACT 3 — Learning ML from an AI Tutor -->
-  <section id="artifact-ai-tutor">
-    <div class="container">
-      <span class="eyebrow">Portfolio Artifact 03 · Assignment 3.3 · ML Training Methods</span>
-      <h2 style="margin-top:16px">Learning Machine Learning from an AI Tutor — and Testing Whether to Believe It</h2>
-      <p class="section-lead">A guided tutoring session on how machine learning models learn, turned into a reusable reference guide. The interesting part wasn't the curriculum — it was what happened when I started pushing back on the tutor.</p>
-
-      <!-- Evidence -->
-      <h3 style="margin:0 0 12px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">Evidence</h3>
-      <div class="filegrid" style="margin-bottom:26px">
-        <a class="file" href="ML_Training_Methods_Quick_Reference.pdf">
-          <strong>Quick Reference Guide (PDF)</strong>
-          <em>Two pages built from the session, written for professionals who evaluate machine learning proposals rather than build models.</em>
-          <span class="go">Download →</span>
-        </a>
-        <a class="file" href="Artifact3_Transcript.pdf">
-          <strong>Full Session Transcript (PDF)</strong>
-          <em>The complete tutoring conversation, including where I challenged the tutor's reliability.</em>
-          <span class="go">Download →</span>
-        </a>
-      </div>
-
-      <!-- Template elements -->
-      <div class="grid" style="margin-bottom:22px">
-        <article class="card">
-          <span class="tag">Objective</span>
-          <p>Build a working foundation in machine learning training methods, and practise using an AI tutor as a learning tool without treating its output as authoritative. A second objective emerged during the session: converting a private learning conversation into something another person could actually use.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Tools &amp; Technologies</span>
-          <p>SchoolAI (AI tutoring platform), <em>A Beginner's Guide to Artificial Intelligence and Machine Learning</em> as supporting reading, and PDF authoring for the reference guide.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Value Proposition</span>
-          <p>Demonstrates two capabilities employers need: understanding how models learn well enough to judge whether a proposed solution fits a problem, and treating AI-generated explanations as claims to verify rather than answers to accept.</p>
-        </article>
-        <article class="card">
-          <span class="tag alt">Unique Value</span>
-          <p>Most people use an AI tutor to get answers. I used one and then interrogated its reliability. My IT service management background also let me stress-test the concepts against a real system — the label-quality problem in ticket routing is invisible in a textbook example and obvious to anyone who has worked a service desk.</p>
-        </article>
-      </div>
-
-      <article class="card" style="padding:28px">
-        <span class="tag">Description</span>
-        <p>For this coursework activity I worked through a structured session with an AI coaching bot covering the three training paradigms — supervised, unsupervised, and reinforcement learning — along with the role of algorithms, the training workflow, why models need repeated passes over data, and why data quality determines the ceiling on performance. Rather than stopping at the seven assigned questions, I brought my own examples from IT service management, corrected one of the tutor's analogies, answered a question it had left open earlier in the session, and challenged it directly on why I should trust explanations it had supplied without independent verification. I then condensed the session into a two-page quick-reference guide aimed at technical professionals who need to evaluate machine learning proposals rather than build models.</p>
-
-        <h3 style="color:var(--accent);margin-top:22px">Process</h3>
-        <p>I worked through the seven core questions in sequence, from supervised learning through to the role of data. At each stage I tested the concept against a scenario from my own work. On supervised learning I raised help desk ticket routing — thousands of historical tickets already tagged by category — and identified that the model can only inherit the accuracy of whoever tagged them; a category that was habitually misfiled will be reproduced faithfully.</p>
-        <p>When the tutor compared algorithms to a recipe, I refined the analogy: data and features are the ingredients, and compute is the oven. I returned to an unanswered question from earlier in the session to state that a reinforcement agent maximises cumulative rather than immediate reward, then pressed on the mechanism — how an agent can recognise that an apparently bad move was worth making — until credit assignment made sense.</p>
-        <p>Asked where a limited budget should go, I argued for better features over more data, since additional data at small scale tends to add noise and feature work requires no labelling team. Finally I asked the tutor how I could trust information it had entirely supplied, and recorded its answer: cross-reference, test it, ask why. I used that exchange as the closing section of the guide.</p>
-
-        <h3 style="color:var(--accent);margin-top:22px">Relevance</h3>
-        <p>The course objectives centre on applying foundational AI and machine learning concepts and evaluating AI tools critically. This artifact does both in one activity: it covers the core training methods, and it documents a deliberate check on the credibility of the tool teaching them.</p>
-
-        <div class="chips">
-          <span class="chip">Supervised / Unsupervised / Reinforcement</span><span class="chip">Training Workflow</span><span class="chip">Data Quality</span><span class="chip">Feature Engineering</span><span class="chip">AI Tool Evaluation</span><span class="chip">Technical Documentation</span>
-        </div>
-
-        <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>References:</strong> <em>A Beginner's Guide to Artificial Intelligence and Machine Learning.</em> AIML-500 Machine Learning Training Methods Coach [AI tutoring session], SchoolAI, July 2026.<br /><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page and the reference guide. The session, the examples drawn from my own work, and the conclusions are my own.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ARTIFACT 4 — Diagnosing Data Failures in Production ML -->
-  <section id="artifact-data-challenges">
-    <div class="container">
-      <span class="eyebrow">Portfolio Artifact 04 · Assignment 4.3 · Data Challenge Scenarios</span>
-      <h2 style="margin-top:16px">Diagnosing Data Failures in Production Machine Learning</h2>
-      <p class="section-lead">Three escalating scenarios — missing data, extreme class imbalance, and a production feedback loop. In every one, the reported metric looked acceptable while the model was failing. This artifact documents how I found the real problem underneath each.</p>
-
-      <!-- Evidence -->
-      <h3 style="margin:0 0 12px;font-size:16px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase">Evidence</h3>
-      <div class="filegrid" style="margin-bottom:26px">
-        <a class="file" href="Artifact4_Transcript.pdf">
-          <strong>Full Session Transcript (PDF)</strong>
-          <em>The complete coaching session across all three scenarios, including the points where I challenged the coach's framing.</em>
-          <span class="go">Download →</span>
-        </a>
-        <a class="file" href="Artifact4_Decision_Brief.pdf">
-          <strong>Decision Brief (PDF)</strong>
-          <em>The session restructured as a practitioner reference — situation, diagnosis, approach, and open questions for each scenario.</em>
-          <span class="go">Download →</span>
-        </a>
-      </div>
-
-      <!-- Template elements -->
-      <div class="grid" style="margin-bottom:22px">
-        <article class="card">
-          <span class="tag">Objective</span>
-          <p>Apply principled approaches to data cleaning and imputation, diagnose why an evaluation metric can misrepresent real-world performance, and explain how production feedback loops contaminate the very data used to correct them.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Process</span>
-          <p>For each scenario I separated the reported symptom from the underlying data defect, proposed an approach covering detection, correction, and prevention, then pressure-tested my own reasoning by questioning the coach rather than accepting its first answer.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Tools &amp; Technologies</span>
-          <p>SchoolAI (AIML-500 Data Challenge Scenarios Coach). Concepts applied: MCAR / MAR / MNAR missingness frameworks, group-wise imputation, train–test leakage control, class weighting, threshold tuning, probability calibration, anomaly detection, and bandit-based exploration.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Value Proposition</span>
-          <p>I can identify the moment a model's reported metric stops describing its actual behaviour, and explain what to measure instead. In all three scenarios the technical remedy was straightforward once the problem was framed correctly — the difficult work was recognising that the headline number was hiding the failure.</p>
-        </article>
-        <article class="card">
-          <span class="tag alt">Unique Value</span>
-          <p>I did not treat the coach as an authority to agree with. I challenged its percentage-based rule for unusable columns and replaced it with a mechanism-based one, questioned whether classification was the right framing before optimising within it, and raised the probability-calibration problem myself rather than waiting to be told.</p>
-        </article>
-        <article class="card">
-          <span class="tag alt">Relevance</span>
-          <p>Organisations increasingly deploy models into environments that shift underneath them and act on their own outputs. Imputation strategy, leakage prevention, metric selection under imbalance, and feedback-loop awareness are what separate a model that trains successfully from one that survives production.</p>
-        </article>
-      </div>
-
-      <article class="card" style="padding:28px">
-        <span class="tag">Description</span>
-        <p>For this coursework activity I completed an interactive session with an AI coaching bot that presented three real-world data challenges of increasing difficulty. Each required a full approach — decisions, reasoning, and solution — before the coach responded with critique and follow-up pressure. For this portfolio I have restructured the conversation into a technical decision brief, presenting each scenario the way a practitioner would document it, and resolving one edge case I left unanswered during the live session.</p>
-
-        <!-- Scenario 1 -->
-        <div class="scenario">
-          <h4>Scenario 1 — Missing Data in a House Price Model</h4>
-          <p class="situation">10,000 property records. Roughly 15% of rows have missing values across <em>year built</em>, <em>square footage</em>, and the target variable <em>sale price</em>.</p>
-
-          <span class="label">My approach</span>
-          <ul>
-            <li><strong>Target variable:</strong> Rows missing <em>sale price</em> cannot train the model, so those rows are dropped — the rows, not the column. But first, check <em>why</em> they are missing. If unsold or withdrawn listings are systematically the ones without a price, dropping them silently narrows what the model is actually trained on.</li>
-            <li><strong>Square footage:</strong> Likely the strongest predictor, so the column stays. Instead of a global median, impute from comparable properties — same neighbourhood, same bedroom count — which preserves the relationships between features rather than flattening every missing house to "average." Add a binary flag marking imputed values, in case the missingness itself carries signal.</li>
-            <li><strong>Year built:</strong> Lower predictive weight, and probably missing where county records are incomplete. Median imputation with a flag is defensible — unless the missing records skew toward older properties, in which case imputation papers over a real pattern.</li>
-            <li><strong>Leakage control:</strong> Compute all imputation statistics from the training split only. Deriving fill values from the full dataset leaks test information into training and inflates evaluation scores.</li>
-          </ul>
-
-          <span class="label">Where I pushed back</span>
-          <p>The coach initially framed column usability as a percentage threshold — under 5% safe, over 30% drop. I challenged that: 40% missing completely at random is easier to handle than 10% missing for a systematic reason. The coach agreed and introduced the proper framework — MCAR, MAR, and MNAR. The percentage tells you how much information you lost; the mechanism tells you whether you introduced bias. Only the second one can poison a model.</p>
-
-          <span class="label">Edge case I resolved afterward</span>
-          <p>The coach asked what happens when a neighbourhood has too few complete records to support a reliable group median — a question I did not answer during the session. The answer is hierarchical fallback: impute from the narrowest group that meets a minimum sample size, widen the grouping (neighbourhood → district → city) when it does not, and record which level was used so the added uncertainty stays visible downstream.</p>
-        </div>
-
-        <!-- Scenario 2 -->
-        <div class="scenario">
-          <h4>Scenario 2 — Extreme Class Imbalance in Fraud Detection</h4>
-          <p class="situation">1 million transactions, 0.5% fraudulent. The model reports 99.5% accuracy but catches only 12% of actual fraud.</p>
-
-          <span class="label">Diagnosis</span>
-          <p>The model has learned that predicting "not fraud" is correct 99.5% of the time. Accuracy is not measuring fraud detection here — it is measuring class prevalence.</p>
-
-          <span class="label">My approach</span>
-          <p>My first question was whether classification is the right framing at all. At 0.5% positives, anomaly detection — modelling normal behaviour and flagging deviation — may fit better, particularly because fraud is adversarial and its patterns shift over time. Within a classification framework, the two levers are class weighting, which changes the decision boundary the model learns, and threshold tuning, which changes only how the outputs are interpreted afterward. These operate at different stages; they are not the same adjustment made twice.</p>
-
-          <span class="label">The failure I surfaced</span>
-          <p>Heavy class weighting distorts probability calibration. A weighted model's output of 0.7 no longer means a 70% likelihood of fraud. If downstream systems simply threshold that score, the relative ordering still holds and nothing breaks. But if they consume it as a calibrated risk figure — for tiered verification, cost-benefit logic, or ranking across models — every decision built on it is systematically wrong. The remedy is to calibrate after training and before those numbers are exposed, using Platt scaling or isotonic regression. This failure is invisible in accuracy <em>and</em> in recall.</p>
-        </div>
-
-        <!-- Scenario 3 -->
-        <div class="scenario">
-          <h4>Scenario 3 — Drift and Feedback Loops in Dynamic Pricing</h4>
-          <p class="situation">A ride-share surge pricing model, stable for three months, shows a 40% error increase concentrated in weekend evenings in specific neighbourhoods. It underprices surge there; drivers avoid the zones; riders wait. A competitor launched in those neighbourhoods two weeks earlier and shifted rider price sensitivity.</p>
-
-          <span class="label">Diagnosis</span>
-          <p>This is not only competitor-driven drift. It is a feedback loop. Recent demand data from those zones was generated under the model's own mispricing, so retraining on it means learning from the consequences of the original error. The observed demand is not the demand that would exist at correct pricing.</p>
-
-          <span class="label">My approach</span>
-          <p>Observation cannot resolve this, because every available data point is contaminated by the pricing decisions that caused the problem. The fix is intervention — randomised pricing experiments, or a permanent exploration component in the pricing policy, so the model receives causal signal about the price–demand relationship instead of an echo of its own behaviour. Unaffected neighbourhoods serve as controls, separating competitor impact from self-inflicted damage. In production this is typically implemented through bandit approaches that balance exploration against exploitation, accepting deliberate short-term pricing losses as the cost of not drifting into a worse failure.</p>
-        </div>
-
-        <h3 style="color:var(--accent);margin-top:26px">What I Took From It</h3>
-        <p>The technical fix was the easy part in all three cases. The harder question was whether I was measuring the right thing to begin with. Accuracy on the fraud model, aggregate error on the pricing model, and a clean-looking dataset in the housing scenario were each concealing the actual failure. That habit — interrogating the metric before trusting it — is what this artifact is meant to demonstrate.</p>
-
-        <div class="chips">
-          <span class="chip">Missing Data / MCAR-MAR-MNAR</span><span class="chip">Imputation Strategy</span><span class="chip">Data Leakage</span><span class="chip">Class Imbalance</span><span class="chip">Probability Calibration</span><span class="chip">Model Drift</span><span class="chip">Feedback Loops</span><span class="chip">Causal vs. Observational Data</span>
-        </div>
-
-        <p style="color:var(--muted);font-size:13px;margin-top:18px;border-top:1px solid var(--border);padding-top:14px"><strong>References:</strong> AIML-500 Data Challenge Scenarios Coach [AI coaching session], SchoolAI, August 2026.<br /><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page. The session responses, the reasoning, and the conclusions are my own.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
+  <!-- ================= SKILLS ================= -->
   <section id="skills">
     <div class="container">
-      <h2>Technical Skills</h2>
-      <p class="section-lead">A quick checklist for hiring managers.</p>
-      <div class="skills">
+      <span class="eyebrow reveal">Technical Data</span>
+      <h2 class="reveal">Technical Skills</h2>
+      <p class="section-lead reveal">A quick checklist for hiring managers.</p>
+      <div class="skills reveal">
         <div class="skill">
-          <h4>Cloud & Systems Admin</h4>
+          <h4>Cloud &amp; Systems Admin</h4>
           <ul><li>Azure Active Directory</li><li>Microsoft Intune</li><li>Active Directory</li><li>ADFS</li></ul>
         </div>
         <div class="skill">
-          <h4>ITSM & Operations</h4>
+          <h4>ITSM &amp; Operations</h4>
           <ul><li>Service Desk Operations</li><li>SLA / OLA Compliance</li><li>Asset Lifecycle Mgmt</li><li>Inventory Control</li></ul>
         </div>
         <div class="skill">
-          <h4>Data & Analytics</h4>
+          <h4>Data &amp; Analytics</h4>
           <ul><li>Python</li><li>SQL</li><li>Power BI</li><li>Tableau</li><li>Predictive Modeling</li></ul>
         </div>
         <div class="skill">
@@ -581,17 +708,17 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ================= CONTACT ================= -->
   <section id="contact">
     <div class="container">
-      <div class="contact">
+      <div class="contact reveal">
         <div>
           <h3>Let's build something reliable — and measurable.</h3>
           <p>Open to IT Operations, Systems Admin, and Data Analytics roles.</p>
         </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="mailto:your.email@example.com">✉ Email Me</a>
-          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn primary" href="mailto:your.email@example.com">Email Me <span class="arrow">&rarr;</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/nikhil-kethireddy-5b0a28283/" target="_blank" rel="noopener">LinkedIn <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -599,9 +726,23 @@
 </main>
 
 <footer>
-  © <span id="y"></span> Nikhil Reddy Kethireddy · Built as a single-file HTML portfolio.
+  &copy; <span id="y"></span> NIKHIL REDDY KETHIREDDY &middot; AI &amp; ML PROGRAM PORTFOLIO
 </footer>
 
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  // Scroll reveal
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
 </body>
 </html>
