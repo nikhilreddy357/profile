@@ -196,6 +196,7 @@
         <li><a href="#artifact-2">Artifact 2</a></li>
         <li><a href="#artifact-3">Artifact 3</a></li>
         <li><a href="#artifact-4">Artifact 4</a></li>
+        <li><a href="#artifact-5">Artifact 5</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -569,6 +570,87 @@
         </div>
 
         <p class="disclosure"><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page. The session responses, the reasoning, and the conclusions are my own.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= ARTIFACT 5 — AI ETHICS ANALYSIS ================= -->
+  <section id="artifact-5">
+    <div class="container">
+      <span class="eyebrow reveal">Portfolio Artifact 05 &middot; Assignment 6.2 &middot; AI Ethics Critical Analysis</span>
+      <h2 class="reveal">When the Model Learns the Wrong Lesson: The Amazon Hiring Tool</h2>
+      <p class="section-lead reveal">A critical analysis of a real-world AI failure — Amazon's experimental recruiting tool, which taught itself gender bias from a decade of hiring data and had to be scrapped. Nobody wrote a biased rule. The system learned one anyway. This artifact examines how, and what it demands of anyone deploying AI in consequential decisions.</p>
+
+      <h3 class="reveal" style="margin:0 0 12px;font-size:11px;color:var(--muted);letter-spacing:.24em;text-transform:uppercase">Evidence</h3>
+      <div class="filegrid reveal" style="margin-bottom:30px">
+        <a class="file" href="Artifact5_Ethics_Analysis.pdf">
+          <strong>Full Ethical Analysis (PDF)</strong>
+          <em>The complete case study — incident summary, three ethical issues with reasoning and mitigations, and a reflection on how the analysis changed my assumptions.</em>
+          <span class="go">Download &rarr;</span>
+        </a>
+      </div>
+
+      <div class="spec reveal">
+        <div class="spec-row">
+          <div class="spec-label">Objective</div>
+          <div class="spec-value">Critically evaluate a documented AI incident for ethical risk — identifying not just what failed, but why the failure was invisible to the people building the system — and translate the findings into governance practices an organisation could actually apply before deployment.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Process</div>
+          <div class="spec-value">Selected and validated the incident against the AI Incident Database (Incident 37) and primary reporting; separated the incident into three ethical failure modes — data, transparency, and oversight; for each, documented why it matters, traced its implications, and proposed one concrete mitigation aligned with emerging regulation such as automated employment decision laws and the EU AI Act.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Tools &amp; Technologies</div>
+          <div class="spec-value">AI Incident Database; primary source research (Reuters, MIT Technology Review, ACLU); document authoring in Microsoft Word. AI tools were used for brainstorming structure, with the analysis and conclusions my own — disclosed in the document itself.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Value Proposition</div>
+          <div class="spec-value">Demonstrates the competency organisations now hire and audit for: assessing an AI system for bias, transparency, and oversight risk <strong>before</strong> trusting it with decisions that affect people. Every mitigation proposed is one a real team could implement — data audits as a deployment gate, disclosure with a human-review channel, and defined boundaries on what may never be fully automated.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Unique Value</div>
+          <div class="spec-value">The analysis is grounded in operational experience, not just theory. I have watched a smaller version of the same anchoring failure in IT operations — automated ticket categorisation and priority scores shaping how technicians treat an issue before anyone has read it. Amazon's recruiters saw AI rankings the same way. Recognising that pattern across domains is what this artifact demonstrates.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">Relevance</div>
+          <div class="spec-value">With the EU AI Act's high-risk provisions enforceable as of August 2026 and automated employment decision laws spreading, ethical AI evaluation has moved from a values statement to a compliance requirement. This artifact rounds out the portfolio: the earlier artifacts show I can select, train, and diagnose models — this one shows I can judge whether a model should be deployed at all.</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-label">References</div>
+          <div class="spec-value">Dastin, J. (2018). Amazon scraps secret AI recruiting tool that showed bias against women. Reuters. &middot; MIT Technology Review (2018). &middot; American Civil Liberties Union (2018). &middot; AI Incident Database, Incident 37.</div>
+        </div>
+      </div>
+
+      <article class="panel reveal" style="margin-top:26px">
+        <h3>Description</h3>
+        <p>Between 2014 and 2018, Amazon developed an experimental AI recruiting tool that scored applicants from one to five stars. Trained on ten years of resumes — most from men, because the tech industry skews male — the model learned to prefer male candidates, penalising resumes containing the word "women's" and downgrading graduates of all-women's colleges. Engineers neutralised those specific terms, but could not guarantee the model would not find other discriminatory patterns, and the project was abandoned. For this artifact I analysed the incident through three ethical failure modes, each summarised below and developed fully in the evidence document.</p>
+
+        <div class="scenario">
+          <h4>Issue 1 — Bias Inherited from Historical Data</h4>
+          <p class="situation">No engineer encoded a preference for men. The model optimised faithfully on patterns in past hires — and automated the past's inequities at machine scale.</p>
+          <p>Any organisation that trains a model on its own historical decisions risks amplifying its own history. The mitigation is structural: audit training data for representation gaps before development begins, and make disparate-impact testing a required gate in the deployment pipeline — not an afterthought.</p>
+        </div>
+
+        <div class="scenario">
+          <h4>Issue 2 — No Transparency Toward the People Affected</h4>
+          <p class="situation">Applicants never knew an algorithm was scoring them. A rejected candidate could not contest the score, request an explanation, or even know the system existed.</p>
+          <p>Secrecy is an ethical risk multiplier: it delays the discovery and correction of harm — the public only learned the details through investigative journalism. The mitigation is disclosure when automated tools influence hiring decisions, plus a channel for human review, which emerging employment-decision regulations now formalise.</p>
+        </div>
+
+        <div class="scenario">
+          <h4>Issue 3 — Automation of a High-Stakes Human Decision</h4>
+          <p class="situation">The stated goal: feed in one hundred resumes, get the top five to hire. Even in trial, recruiters saw the rankings — and scores anchor human judgment without needing formal authority.</p>
+          <p>Hiring involves context and potential that resume patterns cannot capture. The mitigation is keeping AI in an assistive role for consequential decisions, training humans to treat model output as one input among many, and defining explicitly which decision types may never be fully automated.</p>
+        </div>
+
+        <h3 style="margin-top:28px">What I Took From It</h3>
+        <p>I began this analysis assuming biased AI comes from biased programmers or flawed algorithms — something better code could fix. I ended it understanding that the bias lived in the data and the process: the model learned exactly what it was shown, and even targeted fixes could not guarantee fairness. That changes how I will approach every AI initiative — interrogate the training data first, ask whose decisions it encodes, and insist on fairness testing and human oversight before a consequential system ships.</p>
+
+        <div class="chips">
+          <span class="chip">AI Ethics</span><span class="chip">Algorithmic Bias</span><span class="chip">Training Data Audits</span><span class="chip">Transparency &amp; Disclosure</span><span class="chip">Human Oversight</span><span class="chip">AI Governance</span><span class="chip">EU AI Act</span><span class="chip">Responsible AI</span>
+        </div>
+
+        <p class="disclosure"><strong>AI Use Disclosure:</strong> I used AI assistance to organize and refine the wording of this page and to brainstorm the structure of the analysis. The case selection, reasoning, and conclusions are my own.</p>
       </article>
     </div>
   </section>
